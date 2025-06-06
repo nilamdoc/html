@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Slider Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <style>
+   
+    .slider-container {
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+    
+    .swiper {
+      width: 100%;
+      padding-bottom: 50px;
+    }
+    
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    
+    .slide-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: white;
+      z-index: 2;
+    }
+    
+    .slide-content h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .slide-content p {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+    
+    .slide-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transition: opacity 0.4s ease;
+    }
+    
+    .slide-video-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .slide-video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    
+    .swiper-slide:hover .slide-video-wrapper {
+      opacity: 1;
+    }
+    
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background-color: var(--dark-color);
+      opacity: 0.5;
+    }
+    
+    .swiper-pagination-bullet-active {
+      background-color: var(--primary-color);
+      opacity: 1;
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+      color: var(--dark-color);
+    }
+    
+    @media (max-width: 992px) {
+      .swiper-slide {
+        height: 400px;
+      }
+      
+      .slide-content h3 {
+        font-size: 1.6rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .swiper-slide {
+        height: 350px;
+      }
+      
+      .slide-content h3 {
+        font-size: 1.4rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .swiper-slide {
+        height: 300px;
+      }
+      
+      .slide-content h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+
+    .hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video-wrapper video.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Black Overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-hero {
+  display: inline-block;
+  background: white;
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-hero:hover {
+  background: #eee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-hero {
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <h2 class="text-center mb-5">Our Achievements</h2>
+    
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/seed/education1/1200/800.jpg" class="slide-image" alt="Top-Ranked Programs">
+          <div class="slide-video-wrapper">
+            <video class="slide-video" muted loop>
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="slide-content">
+            <h3>Top-Ranked Programs</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel ultricies magna.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/seed/education2/1200/800.jpg" class="slide-image" alt="State-of-the-Art Facilities">
+          <div class="slide-video-wrapper">
+            <video class="slide-video" muted loop>
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          </div>
+          <div class="slide-content">
+            <h3>State-of-the-Art Facilities</h3>
+            <p>Maecenas finibus convallis turpis, non facilisis justo egestas in. Nulla facilisi.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/seed/education3/1200/800.jpg" class="slide-image" alt="Global Alumni Network">
+          <div class="slide-video-wrapper">
+            <video class="slide-video" muted loop>
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          </div>
+          <div class="slide-content">
+            <h3>Global Alumni Network</h3>
+            <p>Fusce consectetur, enim eget aliquet volutpat, lacus nulla semper velit, et luctus.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/seed/education4/1200/800.jpg" class="slide-image" alt="Innovative Research">
+          <div class="slide-video-wrapper">
+            <video class="slide-video" muted loop>
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          </div>
+          <div class="slide-content">
+            <h3>Innovative Research</h3>
+            <p>Sed euismod, nisl vel bibendum lacinia, diam nunc aliquam nisl, vel aliquam nisl nunc vel nisl.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/seed/education5/1200/800.jpg" class="slide-image" alt="Experienced Faculty">
+          <div class="slide-video-wrapper">
+            <video class="slide-video" muted loop>
+              <source src="https://assets.mixkit.co/videos/preview/woman-typing-on-a-laptop-4522-large.mp4" type="video/mp4">
+          </div>
+          <div class="slide-content">
+            <h3>Experienced Faculty</h3>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+          </div>
+        </div>
+        
+        <!-- Slide 6 -->
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/seed/education6/1200/800.jpg" class="slide-image" alt="Career Opportunities">
+          <div class="slide-video-wrapper">
+            <video class="slide-video" muted loop>
+              <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          </div>
+          <div class="slide-content">
+            <h3>Career Opportunities</h3>
+            <p>Donec euismod, nunc vel bibendum lacinia, diam nunc aliquam nisl, vel aliquam nisl nunc vel nisl.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="swiper-pagination"></div>
+       <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <div class="hero-video-wrapper">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Black Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Foreground Content -->
+  <div class="hero-content">
+    <h1>Master every<br>area of your life</h1>
+    <p>Close the gap between where you are and where you want to be with Tony Robbins’ scientifically proven system.</p>
+    <a href="#" class="btn-hero">Start now</a>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          576: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 3,
+          },
+          1200: {
+            slidesPerView: 4,
+          }
+        }
+      });
+      
+      // Initialize videos to be paused initially
+      const videos = document.querySelectorAll('.slide-video');
+      
+      // Set up event listeners for hover effect
+      const slides = document.querySelectorAll('.swiper-slide');
+      slides.forEach((slide, index) => {
+        // Mouse enter event
+        slide.addEventListener('mouseenter', () => {
+          // Pause all videos first
+          videos.forEach(video => {
+            video.pause();
+            video.currentTime = 0;
+          });
+          
+          // Play the video for the current slide
+          const currentVideo = videos[index];
+          currentVideo.play().catch(e => {
+            console.log('Video play failed:', e);
+            // If autoplay is blocked, we'll use a fallback approach
+            currentVideo.currentTime = 0; // Reset video position
+            currentVideo.play(); // Try again immediately
+          });
+        });
+        
+        // Mouse leave event
+        slide.addEventListener('mouseleave', () => {
+          const currentVideo = videos[index];
+          currentVideo.pause();
+          currentVideo.currentTime = 0;
+        });
+      });
+      
+      // Re-attach event listeners after swiper slide change
+      swiper.on('slideChange', function() {
+        // Remove existing event listeners
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+          slide.removeEventListener('mouseenter', slide.mouseenterHandler);
+          slide.removeEventListener('mouseleave', slide.mouseleaveHandler);
+        });
+        
+        // Store the event handlers
+        slides.forEach((slide, index) => {
+          // Mouse enter event
+          slide.mouseenterHandler = () => {
+            // Pause all videos first
+            videos.forEach(video => {
+              video.pause();
+              video.currentTime = 0;
+            });
+            
+            // Play the video for the current slide
+            const currentVideo = videos[index];
+            currentVideo.play().catch(e => {
+              console.log('Video play failed:', e);
+              // If autoplay is blocked, we'll use a fallback approach
+              currentVideo.currentTime = 0; // Reset video position
+              currentVideo.play(); // Try again immediately
+            });
+          };
+          
+          // Mouse leave event
+          slide.mouseleaveHandler = () => {
+            const currentVideo = videos[index];
+            currentVideo.pause();
+            currentVideo.currentTime = 0;
+          };
+          
+          slide.addEventListener('mouseenter', slide.mouseenterHandler);
+          slide.addEventListener('mouseleave', slide.mouseleaveHandler);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
