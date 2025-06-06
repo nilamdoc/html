@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Podcast Player</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(145deg, #e0e0e0, #ffffff);
+      color: #111;
+    }
+
+    .podcast-section {
+      position: relative;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
+
+    .podcast-section::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle at 30% 30%, #ff6ec4, #7873f5);
+      filter: blur(180px);
+      top: -200px;
+      left: -200px;
+      z-index: 0;
+      opacity: 0.2;
+      animation: move1 15s ease-in-out infinite alternate;
+    }
+
+    .podcast-section::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at 70% 70%, #42e695, #3bb2b8);
+      filter: blur(140px);
+      bottom: -150px;
+      right: -150px;
+      z-index: 0;
+      opacity: 0.2;
+      animation: move2 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes move1 {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(60px, 50px); }
+    }
+
+    @keyframes move2 {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50px, -40px); }
+    }
+
+    .podcast-container {
+      position: relative;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      z-index: 2;
+    }
+
+    .container.section-title {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .container.section-title h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .container.section-title p {
+      font-size: 1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 10px auto 0;
+    }
+
+    .podcast-main,
+    .podcast-list {
+      flex: 1;
+      min-width: 320px;
+    }
+
+    /* MAIN PLAYER */
+    .podcast-main {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .podcast-main:hover {
+      transform: scale(1.01);
+    }
+
+    .podcast-main img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .podcast-date {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    .podcast-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin: 15px 0;
+    }
+
+    .audio-controls audio {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 10px;
+      background: linear-gradient(to right, #ff6ec4, #7873f5);
+    }
+
+    /* EPISODE LIST */
+    .podcast-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .episode {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 15px 20px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .episode:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .episode img {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .episode-info {
+      flex: 1;
+    }
+
+    .episode-info small {
+      font-size: 0.75rem;
+      color: #555;
+      text-transform: uppercase;
+    }
+
+    .episode-info h4 {
+      margin: 5px 0 0 0;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .listen-button {
+      font-size: 1.2rem;
+      color: #000;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .episode:hover .listen-button {
+      opacity: 1;
+      color: #ff6ec4;
+    }
+
+    @media (max-width: 768px) {
+      .podcast-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="podcast-section">
+    <div class="podcast-container">
+      <div class="container section-title">
+        <h2>🎧 Podcast</h2>
+        <p>Explore conversations and stories that empower your growth and transformation.</p>
+      </div>
+
+      <!-- Main Player -->
+      <div class="podcast-main">
+        <img id="main-image" src="students-1.webp" alt="Podcast Main">
+        <div class="podcast-date" id="main-date">Business, Wealth · Feb 06, 2024</div>
+        <div class="podcast-title" id="main-title">Tony Robbins Exclusive: Holy Grail of Investing – Chapter 1</div>
+        <div class="audio-controls">
+          <audio id="main-audio" controls>
+            <source id="audio-source" src="500KB_MP3.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Episode List -->
+      <div class="podcast-list">
+        <div class="episode" data-audio="2MB_MP3.mp3" data-title="Holy Grail of Investing – Chapter 1" data-date="Business, Wealth · Feb 06, 2024" data-image="students-2.webp">
+          <img src="students-2.webp" alt="Episode">
+          <div class="episode-info">
+            <small>Business, Wealth</small>
+            <h4>Holy Grail of Investing – Chapter 1</h4>
+          </div>
+          <span class="listen-button">▶</span>
+        </div>
+
+        <div class="episode" data-audio="5MB_MP3.mp3" data-title="Watch Your Language!" data-date="Relationships, Mindset · Jan 14, 2024" data-image="students-3.webp">
+          <img src="students-3.webp" alt="Episode">
+          <div class="episode-info">
+            <small>Relationships, Mindset</small>
+            <h4>Watch Your Language!</h4>
+          </div>
+          <span class="listen-button">▶</span>
+        </div>
+
+        <div class="episode" data-audio="1MB_MP3.mp3" data-title="Get Unstuck!" data-date="Mindset · Nov 08, 2023" data-image="students-4.webp">
+          <img src="students-4.webp" alt="Episode">
+          <div class="episode-info">
+            <small>Mindset</small>
+            <h4>Get Unstuck!</h4>
+          </div>
+          <span class="listen-button">▶</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.episode').forEach(episode => {
+      episode.addEventListener('click', function () {
+        const audioSrc = this.getAttribute('data-audio');
+        const title = this.getAttribute('data-title');
+        const date = this.getAttribute('data-date');
+        const image = this.getAttribute('data-image');
+
+        document.getElementById('main-title').innerText = title;
+        document.getElementById('main-date').innerText = date;
+        document.getElementById('main-image').src = image;
+
+        const audio = document.getElementById('main-audio');
+        const source = document.getElementById('audio-source');
+        source.src = audioSrc;
+        audio.load();
+        audio.play();
+      });
+    });
+  </script>
+</body>
+</html>

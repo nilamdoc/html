@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Intro Section</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .section-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .intro-image,
+    .intro-content {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    .intro-image {
+      background: #156ff5;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .intro-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .intro-content h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .intro-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background: #f3f3f3;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #e0e0e0;
+    }
+
+    .logos-video {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      flex: 1 1 300px;
+      filter: grayscale(1);
+    }
+
+    .logos img {
+      height: 100px;
+      object-fit: contain;
+      max-width: 150px;
+    }
+
+    .video-thumb {
+      position: relative;
+      flex: 1 1 300px;
+      max-width: 400px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .video-thumb img,
+    .video-thumb video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .video-thumb button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .intro-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-content h1 {
+        font-size: 2rem;
+      }
+
+      .logos-video {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .logos {
+        justify-content: center;
+      }
+
+      .intro-image,
+      .intro-content {
+        flex: 1 1 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .intro-content h1 {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section-wrapper intro-section">
+    <div class="intro-image">
+      <img src="students-1.webp" alt="Person" />
+    </div>
+
+    <div class="intro-content">
+      <h1>Do you have a hunger to increase the quality of your life?</h1>
+      <p>
+        We believe progress equals happiness. And no matter where you’re looking
+        to excel, we’re here to help you forge your pathway to power. Meet the
+        man who’s spent over 45 years creating breakthroughs and transforming
+        lives.
+      </p>
+      <button class="btn">Meet Tony Robbins</button>
+    </div>
+  </section>
+
+  <section class="section-wrapper logos-video">
+    <div class="logos">
+      <img src="students-1.webp" alt="Forbes" />
+      <img src="students-2.webp" alt="Fortune" />
+      <img src="students-3.webp" alt="Inc." />
+      <img src="students-4.webp" alt="Success" />
+    </div>
+
+    <div class="video-thumb" id="videoContainer">
+      <img src="students-4.webp" alt="Watch Video" id="videoThumb" />
+      <button id="playBtn">▶ Watch video</button>
+    </div>
+  </section>
+
+  <script>
+    const videoContainer = document.getElementById('videoContainer');
+    const playBtn = document.getElementById('playBtn');
+    const videoThumb = document.getElementById('videoThumb');
+
+    playBtn.addEventListener('click', () => {
+      videoThumb.style.display = 'none';
+      playBtn.style.display = 'none';
+
+      const video = document.createElement('video');
+      video.src = 'Frontend.mp4'; // Your actual video file path
+      video.controls = true;
+      video.autoplay = true;
+      video.style.width = '100%';
+      video.style.borderRadius = '16px';
+
+      videoContainer.appendChild(video);
+      video.focus();
+    });
+  </script>
+
+</body>
+</html>

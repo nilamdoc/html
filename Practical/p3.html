@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Testimonials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .testimonial-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .background-layer,
+    .background-fade {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 1.5s ease-in-out;
+      z-index: 0;
+    }
+
+    .background-fade {
+      opacity: 0;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .testimonial-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .testimonial-quote {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .avatars {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .avatar-item {
+      cursor: pointer;
+      text-align: center;
+      max-width: 120px;
+    }
+
+    .avatar-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      transition: transform 0.3s ease;
+    }
+
+    .avatar-item:hover img,
+    .avatar-item.active img {
+      transform: scale(1.1);
+      border-color: #007bff;
+    }
+
+    .avatar-name {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .avatar-title {
+      font-size: 0.75rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-quote {
+        font-size: 1.2rem;
+      }
+      .avatars {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="testimonial-section">
+  <div class="background-layer" id="bgCurrent" style="background-image: url('students-1.webp');"></div>
+  <div class="background-fade" id="bgNext"></div>
+  <div class="overlay"></div>
+
+  <div class="testimonial-content">
+    <div class="testimonial-quote" id="testimonialText">
+      “I was able to talk to Tony Robbins right after I got hurt and Mr. Robbins inspired me a lot to never lose my soul and always be myself. Like I’ve learned the human body can give out on you but your soul is there forever.”
+    </div>
+    <div class="avatars">
+      <div class="avatar-item active" data-img="students-1.webp"
+           data-text="“I was able to talk to Tony Robbins right after I got hurt and Mr. Robbins inspired me a lot to never lose my soul and always be myself. Like I’ve learned the human body can give out on you but your soul is there forever.”">
+        <img src="students-1.webp" alt="Klay Thompson">
+        <div class="avatar-name">Klay Thompson</div>
+        <div class="avatar-title">Basketball Player</div>
+      </div>
+
+      <div class="avatar-item" data-img="students-2.webp"
+           data-text="“Tony taught me how to focus my mind and unlock a new level of performance. His strategies helped me both on and off the court.”">
+        <img src="students-2.webp" alt="Serena Williams">
+        <div class="avatar-name">Serena Williams</div>
+        <div class="avatar-title">Tennis Champion</div>
+      </div>
+
+      <div class="avatar-item" data-img="students-3.webp"
+           data-text="“I gained clarity and confidence with Tony’s help. My life changed in powerful ways—he’s the real deal.”">
+        <img src="students-3.webp" alt="Maria Menounos">
+        <div class="avatar-name">Maria Menounos</div>
+        <div class="avatar-title">TV Host</div>
+      </div>
+
+      <div class="avatar-item" data-img="students-4.webp"
+           data-text="“Tony Robbins’ business mastery and energy shifted our company’s culture and performance. A must for any CEO.”">
+        <img src="students-4.webp" alt="Mark Benioff">
+        <div class="avatar-name">Mark Benioff</div>
+        <div class="avatar-title">CEO of Salesforce</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const avatars = document.querySelectorAll('.avatar-item');
+  const testimonialText = document.getElementById('testimonialText');
+  const bgCurrent = document.getElementById('bgCurrent');
+  const bgNext = document.getElementById('bgNext');
+
+  avatars.forEach(avatar => {
+    avatar.addEventListener('mouseenter', () => {
+      avatars.forEach(a => a.classList.remove('active'));
+      avatar.classList.add('active');
+
+      const newText = avatar.getAttribute('data-text');
+      const newImg = avatar.getAttribute('data-img');
+
+      // Update testimonial text
+      testimonialText.textContent = newText;
+
+      // Animate background transition
+      bgNext.style.backgroundImage = `url('${newImg}')`;
+      bgNext.style.opacity = 1;
+
+      setTimeout(() => {
+        bgCurrent.style.backgroundImage = `url('${newImg}')`;
+        bgNext.style.opacity = 0;
+      }, 1000);
+    });
+  });
+</script>
+
+</body>
+</html>

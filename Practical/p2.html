@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pillars Section</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pillars-section {
+      padding: 60px 15px;
+      background-color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 15px;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: block;
+      color: #555;
+    }
+
+    .pillars-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pillars-list li {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .pillars-list li:hover,
+    .pillars-list li.active {
+      color: #007bff;
+    }
+
+    .pillars-image img {
+      width: 100%;
+      border-radius: 12px;
+      transition: opacity 0.4s ease;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .pillars-list li {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="pillars-section">
+  <div class="container">
+    <div class="row">      
+      <!-- Left -->
+      <div class="col-md-6">
+        <small class="section-label">• Pillars for an Extraordinary Life</small>
+        <ul class="pillars-list">
+          <li data-img="students-1.webp" class="active">Mindset</li>
+          <li data-img="https://via.placeholder.com/600x400/222222/ffffff?text=Wealth">Wealth</li>
+          <li data-img="https://via.placeholder.com/600x400/333333/ffffff?text=Health">Health</li>
+          <li data-img="https://via.placeholder.com/600x400/444444/ffffff?text=Relationships">Relationships</li>
+          <li data-img="https://via.placeholder.com/600x400/555555/ffffff?text=Business">Business</li>
+          <li data-img="https://via.placeholder.com/600x400/666666/ffffff?text=Leadership">Leadership</li>
+          <li data-img="https://via.placeholder.com/600x400/777777/ffffff?text=Happiness">Happiness</li>
+        </ul>
+      </div>
+
+      <!-- Right -->
+      <div class="col-md-6 pillars-image">
+        <img id="pillarImage" src="students-1.webp" alt="Pillar Image">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const items = document.querySelectorAll('.pillars-list li');
+  const image = document.getElementById('pillarImage');
+
+  items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const newImg = item.getAttribute('data-img');
+      image.setAttribute('src', newImg);
+
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

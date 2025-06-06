@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+    }
+
+    section.slider-section {
+      padding: 2rem 1rem;
+    }
+
+    .swiper {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .swiper-slide {
+      position: relative;
+      color: white;
+      height: 500px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: start;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide-content {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+      padding: 2rem;
+      width: 100%;
+    }
+
+    .slide-content h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .slide-content p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      max-width: 500px;
+    }
+
+    .event-details {
+      font-size: 0.9rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: white;
+      color: black;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 1rem;
+      display: inline-block;
+    }
+
+    /* Navigation Buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .slide-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="slider-section">
+  <h1 style="text-align: center;">Become unshakeable</h1>
+  <p style="text-align: center;">With events, one-on-one coaching, and programs designed to power your growth...</p>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide" style="background-image: url('https://via.placeholder.com/1200x500.png?text=Event+1');">
+        <div class="slide-content">
+          <h2>Create life according to your terms</h2>
+          <p>Dive deep into the patterns that are holding you back, ignite your motivation, and build momentum toward the life of your dreams.</p>
+          <div class="event-details">
+            <span><strong>Date:</strong> Dec 5 - 10, 2025</span>
+            <span><strong>Place:</strong> West Palm Beach, FL</span>
+            <span><strong>Timezone:</strong> Eastern</span>
+          </div>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide" style="background-image: url('https://via.placeholder.com/1200x500.png?text=Event+2');">
+        <div class="slide-content">
+          <h2>Unleash the Power Within</h2>
+          <p>Reprogram your mind and body for peak performance, wealth, and unstoppable energy.</p>
+          <div class="event-details">
+            <span><strong>Date:</strong> Jan 20 - 23, 2026</span>
+            <span><strong>Place:</strong> Las Vegas, NV</span>
+            <span><strong>Timezone:</strong> Pacific</span>
+          </div>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Add more slides as needed -->
+    </div>
+
+    <!-- Navigation -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+</body>
+</html>

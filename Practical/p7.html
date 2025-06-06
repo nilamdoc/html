@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tony Robbins Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header, section, footer {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      background-blend-mode: overlay;
+      transition: all 0.6s ease;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      z-index: 0;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      color: #ddd;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ffdf00, #ff8c00);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.4rem 0.8rem;
+      border-radius: 50px;
+      margin-top: 0.75rem;
+      box-shadow: 0 2px 6px rgba(255, 140, 0, 0.5);
+    }
+
+    .hover-1:hover {
+      transform: perspective(1000px) rotateY(3deg) scale(1.05);
+      box-shadow: 0 20px 60px rgba(255, 255, 255, 0.25);
+      filter: brightness(1.15) contrast(1.05);
+    }
+
+    .hover-2:hover {
+      transform: translateY(-10px) scale(1.08);
+      box-shadow: 0 25px 50px rgba(0, 255, 255, 0.3);
+      filter: hue-rotate(15deg);
+    }
+
+    .hover-3:hover {
+      transform: scale(1.1) rotate(1deg);
+      box-shadow: 0 20px 30px rgba(255, 0, 150, 0.4);
+      filter: saturate(1.4);
+    }
+
+    .hover-4:hover {
+      transform: scale(1.05) rotateX(6deg);
+      box-shadow: 0 15px 35px rgba(0, 255, 100, 0.4);
+      filter: contrast(1.2);
+    }
+
+    .hover-5:hover {
+      transform: translateX(5px) scale(1.07);
+      box-shadow: -10px 10px 40px rgba(100, 100, 255, 0.4);
+      filter: brightness(1.1) saturate(1.3);
+    }
+
+    .events {
+      margin-top: 3rem;
+    }
+
+    .events h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .footer {
+      background: #111;
+      color: #ccc;
+      font-size: 0.875rem;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tony Robbins Programs</h1>
+    <p>Connect deeply, engage fully and evolve intentionally with Tony’s exclusive programs and communities.</p>
+  </header>
+
+  <section class="section program-grid">
+    <div class="grid">
+      <div class="card" style="background-image: url('students-1.webp');">
+        <div class="card-content">
+          <h3>Create momentum in every area of your life</h3>
+          <p>Master the proven strategies developed and used by Tony Robbins to lead a life of massive purpose, passion, abundance and happiness.</p>
+          <span class="badge">INNER CIRCLE</span>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('students-2.webp');">
+        <div class="card-content">
+          <h3>Accelerate your path to business success</h3>
+          <p>A curated community to give you the guidance and knowledge to make record profits this year.</p>
+          <span class="badge">BUSINESS ACCELERATOR</span>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('students-3.webp');">
+        <div class="card-content">
+          <h3>Reignite your inner spark</h3>
+          <p>Embark on a journey of self-discovery to embrace your most authentic self.</p>
+          <span class="badge">UNLEASH THE POWER WITHIN</span>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('students-4.webp');">
+        <div class="card-content">
+          <h3>Your most exclusive opportunity with Tony & Sage Robbins</h3>
+          <p>An exclusive opportunity to learn, travel, and network with Tony Robbins alongside an elite group operating at the highest level.</p>
+          <span class="badge">PLATINUM PARTNERSHIPS</span>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('students-1.webp');">
+        <div class="card-content">
+          <h3>Ask Tony anything and get a real answer—24/7</h3>
+          <p>Tony Robbins AI is a fully interactive experience powered by the proven tools and wisdom of the world’s #1 life and business strategist.</p>
+          <span class="badge">TONY ROBBINS AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section events">
+    <h2>Upcoming Events</h2>
+    <div class="grid">
+      <div class="card" style="background-image: url('students-1.webp');">
+        <div class="card-content">
+          <h3>Business Mastery</h3>
+          <p>Grow your business exponentially</p>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('students-2.webp');">
+        <div class="card-content">
+          <h3>Leadership Academy</h3>
+          <p>Become a great leader</p>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('students-3.webp');">
+        <div class="card-content">
+          <h3>Date with Destiny</h3>
+          <p>Create life according to your terms</p>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('students-4.webp');">
+        <div class="card-content">
+          <h3>Unleash the Power Within</h3>
+          <p>Experience explosive growth</p>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('students-1.webp');">
+        <div class="card-content">
+          <h3>Life Mastery</h3>
+          <p>Master mind and body</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="section footer">
+    <div class="footer-columns">
+      <div>
+        <h4>About</h4>
+        <p>Events<br>Programs<br>Coaching<br>Start now</p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <p>Documentary<br>Podcast<br>Blog<br>Free resources<br>Shop all</p>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <p>DISC Assessment<br>Careers<br>Giving</p>
+      </div>
+      <div>
+        <h4>Customer Support</h4>
+        <p>Contact Customer Support for questions<br>Media inquiries<br>Press welcome</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tony Robbins. All rights reserved. | 9051 Mira Mesa Blvd, San Diego, CA</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('.card');
+      const effects = ['hover-1', 'hover-2', 'hover-3','hover-4','hover-5'];
+
+      cards.forEach(card => {
+        const random = effects[Math.floor(Math.random() * effects.length)];
+        card.classList.add(random);
+      });
+    });
+  </script>
+</body>
+</html>

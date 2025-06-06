@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inner Circle by Tony Robbins</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #000;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #ffc107;
+      border-bottom: 2px solid #ffc107;
+      user-select: none;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem 3rem;
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      overflow: hidden;
+      z-index: 1;
+      height: 100vh;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 45%;
+      z-index: 2;
+      animation: slideInLeft 1.5s ease-out;
+      position: relative;
+      user-select: none;
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-content h2 {
+      font-size: 2.6rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      background: linear-gradient(90deg, #ffc107, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      cursor: default;
+    }
+
+    .hero-content h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 60px;
+      height: 4px;
+      background: #ff5722;
+      border-radius: 2px;
+      animation: underlineSlide 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes underlineSlide {
+      0% {
+        width: 40px;
+        background: #ff5722;
+      }
+      100% {
+        width: 80px;
+        background: #ffc107;
+      }
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      color: #f0e68c;
+      text-shadow: 0 0 8px rgba(255, 193, 7, 0.7);
+    }
+
+    .hero-content button {
+      background: linear-gradient(135deg, #ff5722, #ffc107);
+      color: #000;
+      padding: 0.85rem 2.5rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(255, 87, 34, 0.6);
+      transition: all 0.35s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      user-select: none;
+    }
+
+    .hero-content button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -75%;
+      width: 50%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.4);
+      transform: rotate(25deg);
+      transition: all 0.7s ease;
+      filter: blur(15px);
+      pointer-events: none;
+    }
+
+    .hero-content button:hover::before {
+      left: 120%;
+      transition: all 0.7s ease;
+    }
+
+    .hero-content button:hover {
+      background: linear-gradient(135deg, #ffc107, #ff5722);
+      box-shadow: 0 8px 18px rgba(255, 193, 7, 0.9);
+      transform: scale(1.1);
+    }
+
+    .hero-content button svg {
+      width: 20px;
+      height: 20px;
+      fill: #000;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-content button:hover svg {
+      transform: translateX(4px);
+    }
+
+    .hero-video {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      z-index: 2;
+      position: relative;
+    }
+
+    .video-wrapper {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 193, 7, 0.3);
+      background: #000;
+      transition: transform 0.3s ease;
+      width: 100%;
+      max-width: 650px;
+      cursor: pointer;
+    }
+
+    .video-wrapper:hover {
+      transform: scale(1.03);
+    }
+
+    .video-wrapper video {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    
+  .video-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 14px 45px rgb(0 0 0 / 0.1);
+  }
+
+  /* Left column with overlapping images */
+  .images-wrapper {
+    flex: 1;
+    position: relative;
+    min-width: 280px;
+  }
+
+  .images-wrapper img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+
+  .images-wrapper img:first-child {
+    top: 0;
+    left: -20px;
+    width: 85%;
+    z-index: 2;
+    transform: rotate(-4deg);
+    box-shadow: 0 15px 30px rgba(59, 63, 219, 0.3);
+  }
+  .images-wrapper img:last-child {
+    bottom: 0;
+    left: 40px;
+    width: 75%;
+    z-index: 1;
+    transform: rotate(5deg);
+    box-shadow: 0 12px 30px rgba(255, 101, 132, 0.3);
+  }
+
+  .images-wrapper:hover img:first-child {
+    transform: rotate(-2deg) scale(1.05);
+  }
+  .images-wrapper:hover img:last-child {
+    transform: rotate(3deg) scale(1.05);
+  }
+
+  /* Right column content */
+  .content-wrapper {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+  }
+
+  /* Heading with animated gradient effect */
+  .content-wrapper h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: linear-gradient(270deg, #6c63ff, #ff6584, #3b3fdb, #ff6584);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 10s ease infinite;
+    margin: 0;
+  }
+
+  @keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  .content-wrapper h3 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #555;
+    margin: 0 0 1rem 0;
+  }
+
+  .content-wrapper p {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #444;
+    max-width: 580px;
+  }
+
+  /* Video */
+  video {
+    border-radius: 16px;
+    width: 100%;
+    max-height: 350px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin: 1.5rem 0;
+  }
+
+  /* Button */
+  .btn-play button {
+    background: #6c63ff;
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 0.85rem 2.5rem;
+    font-size: 1.15rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.5);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .btn-play button:hover,
+  .btn-play button:focus {
+    background: #514edd;
+    outline: none;
+    transform: scale(1.07);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .video-section {
+      flex-direction: column;
+      padding: 1.5rem 1.5rem 2rem;
+    }
+    .images-wrapper {
+      position: relative;
+      height: 320px;
+      margin-bottom: 2rem;
+    }
+    .images-wrapper img {
+      position: absolute;
+      width: 60%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%) rotate(0deg);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    .images-wrapper img:last-child {
+      top: 120px;
+      width: 55%;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+    }
+    .content-wrapper h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .content-wrapper h2 {
+      font-size: 1.6rem;
+    }
+    .content-wrapper h3 {
+      font-size: 1.1rem;
+    }
+    .btn-play button {
+      font-size: 1rem;
+      padding: 0.7rem 2rem;
+    }
+  }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+        min-height: auto;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        animation: none;
+      }
+
+      .hero-video {
+        margin-top: 2rem;
+        justify-content: center;
+      }
+
+      .video-wrapper {
+        max-width: 90vw;
+      }
+
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+
+      .video-section {
+        margin: 3rem 1rem 4rem;
+        padding: 1.5rem 1rem;
+      }
+
+      .video-section h2 {
+        font-size: 2rem;
+      }
+
+      .video-section h3 {
+        font-size: 1.1rem;
+      }
+
+      .video-section video {
+        max-width: 100%;
+      }
+    }
+    
+  .progress-section {
+    background: linear-gradient(135deg, #725f5f, #aa9191);
+    padding: 5rem 2rem;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .progress-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 40%, rgba(255, 193, 7, 0.1), transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(0, 123, 255, 0.1), transparent 60%);
+    z-index: 1;
+  }
+
+  .progress-section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ff9800, #ffc107);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 4rem;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.3);
+    border-color: rgba(255, 193, 7, 0.4);
+  }
+
+  .feature-icon {
+    font-size: 2.8rem;
+    color: #ffc107;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .feature-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffeb3b;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-desc {
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .progress-section h2 {
+      font-size: 2.2rem;
+    }
+    .feature-card {
+      padding: 1.5rem 1rem;
+    }
+  }
+      
+  .training-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .training-section h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+    position: relative;
+    color: #1a1a1a;
+  }
+  
+  /* underline accent */
+  .training-section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #f05a28;
+    margin: 12px auto 24px auto;
+    border-radius: 2px;
+  }
+  
+  .training-section p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 48px;
+  }
+  
+  .training-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.07);
+    padding-left: 40px;
+    padding-right: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .training-block:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
+  }
+  
+  /* Reverse layout */
+  .training-block.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .training-text {
+    flex: 1;
+  }
+  
+  .training-text h3 {
+    font-size: 1.8rem;
+    color: #f05a28;
+    margin-bottom: 12px;
+  }
+  
+  .training-text p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .training-image {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  }
+  
+  .training-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, opacity 0.4s ease;
+    opacity: 0.95;
+  }
+  
+  .training-block:hover .training-image img {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .training-block,
+    .training-block.reverse {
+      flex-direction: column;
+    }
+    .training-block {
+      margin-bottom: 40px;
+      padding: 25px 20px;
+    }
+    .training-image {
+      width: 100%;
+      height: 250px;
+      margin-top: 20px;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.12);
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <header>Inner Circle by Tony Robbins</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Create Momentum in Every Area of Your Life</h2>
+      <p>Fast track your goals with consistent training and accountability.</p>
+      <button>
+        Join Now
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+          <path d="M12 4l1.41 1.41L8.83 10H20v2H8.83l4.58 4.59L12 18l-8-8z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="hero-video">
+      <div class="video-wrapper">
+        <video
+          muted
+          playsinline
+          poster="https://via.placeholder.com/650x350?text=Video+Preview"
+          preload="none"
+        >
+          <source src="Frontend.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+ <section class="video-section" aria-label="Exclusive Video Insight Section">
+  <div class="images-wrapper" aria-hidden="true">
+    <img src="students-3.webp" alt="Student group" />
+    <img src="students-2.webp" alt="Student interaction" />
+  </div>
+
+  <div class="content-wrapper">
+    <h2>Exclusive Video Insight</h2>
+    <h3>Your journey to transformation starts here</h3>
+
+    <video controls poster="students-3.webp" aria-describedby="video-desc">
+      <source src="Frontend.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <p id="video-desc">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur interdum, nisl nisi efficitur nisl, vel laoreet nisi nisi vitae nisl. Vivamus malesuada faucibus sapien, ac ullamcorper nisl.
+    </p>
+  </div>
+</section>
+<section class="progress-section">
+  <h2>Progress in Every Area</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+      <div class="feature-title">Goal Clarity</div>
+      <div class="feature-desc">Pursue long-term goals with a focused and empowered mindset.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-user-ninja"></i></div>
+      <div class="feature-title">Identity Shift</div>
+      <div class="feature-desc">Upgrade your identity and habits to align with your highest self.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-hourglass-end"></i></div>
+      <div class="feature-title">End Procrastination</div>
+      <div class="feature-desc">Break the cycle of delay and take massive focused action.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-wallet"></i></div>
+      <div class="feature-title">Wealth & Time</div>
+      <div class="feature-desc">Manage your resources wisely and grow both wealth and freedom.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-mountain"></i></div>
+      <div class="feature-title">Never Settle</div>
+      <div class="feature-desc">Push past limitations and commit to your next level of greatness.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-compass"></i></div>
+      <div class="feature-title">Purpose Design</div>
+      <div class="feature-desc">Define your unique purpose and live with authentic direction.</div>
+    </div>
+  </div>
+</section>
+  
+<section class="training-section">
+  <h2>Create Momentum in Every Area of Your Life</h2>
+  <p>Fast track your goals with consistent training and accountability.</p>
+
+  <div class="training-block">
+    <div class="training-text">
+      <h3>Weekly Coaching</h3>
+      <p>Join live group coaching sessions with Tony’s certified team, designed to keep you focused, aligned, and unstoppable.</p>
+    </div>
+    <div class="training-image">
+      <img src="students-3.webp" alt="Weekly Coaching" />
+    </div>
+  </div>
+
+  <div class="training-block reverse">
+    <div class="training-text">
+      <h3>Monthly Mastery</h3>
+      <p>Unlock deep dives into powerful topics every month — from personal breakthroughs to professional growth strategies.</p>
+    </div>
+    <div class="training-image">
+      <img src="students-1.webp" alt="Monthly Mastery" />
+    </div>
+  </div>
+
+  <div class="training-block">
+    <div class="training-text">
+      <h3>Live Q&A</h3>
+      <p>Engage in powerful interactive sessions to get your personal questions answered by mentors and trainers live.</p>
+    </div>
+    <div class="training-image">
+      <img src="students-2.webp" alt="Live Q&A" />
+    </div>
+  </div>
+
+  <div class="training-block reverse">
+    <div class="training-text">
+      <h3>All Access Portal</h3>
+      <p>Enjoy unlimited access to Tony’s best on-demand training programs and curated content in one easy-to-use portal.</p>
+    </div>
+    <div class="training-image">
+      <img src="students-4.webp" alt="All Access Portal" />
+    </div>
+  </div>
+</section>
+
+  <script>
+    // Autoplay video preview on hover for hero section video
+    const heroVideo = document.querySelector('.video-wrapper video');
+    heroVideo.addEventListener('mouseenter', () => {
+      heroVideo.play();
+    });
+    heroVideo.addEventListener('mouseleave', () => {
+      heroVideo.pause();
+      heroVideo.currentTime = 0;
+    });
+
+    // Watch Now button - example click effect (optional)
+    document.querySelector('.btn-play button').addEventListener('click', () => {
+      alert('Enjoy your exclusive video insight!');
+    });
+  </script>
+
+</body>
+</html>

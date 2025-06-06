@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inner Circle Program - Tony Robbins</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+  <style>
+   
+
+    /* Animations */
+    @keyframes fadeIn { from {opacity: 0;} to {opacity:1;} }
+    @keyframes fadeInUp { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+    @keyframes slideDown { from {opacity:0; transform: translateY(-50px);} to {opacity:1; transform: translateY(0);} }
+    @keyframes slideUp { from {opacity:0; transform: translateY(50px);} to {opacity:1; transform: translateY(0);} }
+    @keyframes fadeInH3 { to {opacity:1; transform: translateY(0);} }
+    @keyframes fadeInDesc { to {opacity:1; transform: translateY(0);} }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
+                  url('students-1.webp') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      color: white;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero h2 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      animation: slideDown 1s ease forwards;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      animation: slideUp 1s ease forwards;
+    }
+    .hero button {
+      background: #e94560;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      color: white;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero button:hover {
+      background: #d0304c;
+      transform: scale(1.05);
+    }
+
+    /* Sections */
+    .section {
+      width: 100%;
+      padding: 6rem 2rem;
+      animation: fadeInUp 1s ease-in-out;
+    }
+    .section:nth-child(odd) { background: #f0f4f8; }
+    .section:nth-child(even) { background: #e8f5e9; }
+    .section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #e94560;
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    /* Features Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      list-style: none;
+      padding: 0;
+    }
+    .features li {
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      font-size: 1.1rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .features li::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(233,69,96,0.1), rgba(233,69,96,0.2));
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .features li:hover::before { opacity: 1; }
+    .features li:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .feature-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .feature-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 25px 25px 0 0;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .feature-card p {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      color: #1c1c1e;
+    }
+    .features li:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Training Section */
+    .live-training .training-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .training-text { flex: 1 1 45%; }
+    .training-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #e94560;
+    }
+    .training-list {
+      list-style: none;
+      padding: 0;
+    }
+    .training-list li {
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      border-left: 4px solid transparent;
+      transition: all 0.3s ease;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .training-list li:hover,
+    .training-list li.active {
+      border-left-color: #e94560;
+      background: #fef3f4;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .training-list strong {
+      display: block;
+      font-size: 1.1rem;
+      color: #1c1c1e;
+      margin-bottom: 0.3rem;
+    }
+    .training-list span {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .training-image { flex: 1 1 50%; text-align: center; }
+    .training-image img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+    .training-image img:hover { transform: scale(1.02); }
+
+    /* Mentorship Section */
+    .mentorship-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('students-2.webp');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .mentorship-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+    .mentorship-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 700px;
+      padding: 2rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    .mentorship-section h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: #f8c46b;
+    }
+    .mentorship-section p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #e0e0e0;
+    }
+    .mentorship-section .btn {
+      padding: 0.75rem 2rem;
+      background-color: #f8c46b;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+    .mentorship-section .btn:hover { background-color: #ffdf91; }
+
+    @media (max-width: 768px) {
+      .mentorship-section h2 { font-size: 2rem; }
+      .mentorship-section p { font-size: 1rem; }
+      .mentorship-content { padding: 1rem; }
+    }
+
+    /* Video Section */
+    .video-section h3 {
+      font-size: 1.8rem;
+      color: #e94560;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInH3 1s ease-in-out forwards;
+      animation-delay: 0.5s;
+    }
+    .video-section p {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInDesc 1s ease-in-out forwards;
+      animation-delay: 0.8s;
+    }
+    .video-section video {
+      width: 100%;
+      max-width: 960px;
+      margin: 2rem auto 0;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .video-section video:hover { transform: scale(1.01); }
+    .video-section .btn-play {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .btn-play button {
+      background: #e94560;
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-play button:hover { background: #c9334a; }
+
+    /* Pricing */
+    .pricing {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .pricing p {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .plan {
+      background: linear-gradient(135deg, #1e293b, #334155);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 320px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      opacity: 0;
+    }
+    .plan:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(250,204,21,0.3);
+    }
+    .plan h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #facc15;
+    }
+    .plan p {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #a3e635;
+    }
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 2rem;
+      text-align: left;
+    }
+    .plan ul li {
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .plan ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #4ade80;
+    }
+    .plan button {
+      background-color: #facc15;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .plan button:hover { background-color: #fde047; }
+
+    @media (max-width: 768px) {
+      .plan { width: 100%; }
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 5rem 2rem;
+      background: #f8fafc;
+      color: #1e293b;
+      position: relative;
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      color: #0f172a;
+    }
+    .faq-timeline {
+      position: relative;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    .faq-item {
+      background: #ffffff;
+      border-left: 5px solid #facc15;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.5s ease;
+    }
+    .faq-item::before {
+      content: "💬";
+      position: absolute;
+      left: -36px;
+      top: 15px;
+      font-size: 1.2rem;
+      background: #facc15;
+      color: #000;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .faq-item.opened {
+      border-left-color: #4ade80;
+    }
+    .faq-question {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      color: #0f172a;
+      position: relative;
+    }
+    .faq-answer {
+      display: none;
+      font-size: 1rem;
+      color: #475569;
+    }
+    .faq-question::after {
+      content: "▶";
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.opened .faq-question::after {
+      transform: rotate(90deg);
+    }
+
+    @media (max-width: 768px) {
+      .faq-section h2 { font-size: 2rem; }
+      .faq-item { padding: 1.2rem; }
+      .faq-question { font-size: 1.1rem; }
+    }
+
+    /* Blog Posts Slider */
+    .blog-posts {
+      padding: 4rem 2rem;
+      background: #1e293b;
+      position: relative;
+    }
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .blog-header h2 {
+      font-size: 2.5rem;
+      color: #facc15;
+    }
+    .slider-controls {
+      display: flex;
+      gap: 12px;
+    }
+    .slider-btn {
+      background: #facc15;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .slider-btn:hover { background: #fde047; }
+    .blog-slider {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 1rem;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .blog-slider::-webkit-scrollbar { display: none; }
+    .blog-card {
+      position: relative;
+      min-width: 320px;
+      height: 250px;
+      flex: 0 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .blog-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 14px 48px rgba(250,204,21,0.15);
+    }
+    .blog-content {
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(15,23,42,0.8), rgba(15,23,42,0.2));
+      color: #fff;
+      padding: 1rem;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+    .blog-card:hover .blog-content {
+      background: linear-gradient(to top, rgba(250,204,21,0.8), rgba(0,0,0,0.2));
+    }
+    .blog-content h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      color: #facc15;
+      transition: color 0.3s ease;
+    }
+    .blog-card:hover h3 { color: #000; }
+    .blog-content p {
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+    .blog-card:hover p { color: #000; }
+
+    @media (max-width: 768px) {
+      .blog-header h2 { font-size: 1.75rem; }
+      .slider-btn { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
+      .blog-card { min-width: 260px; height: 220px; }
+    }
+
+	  .video-hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .video-hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4);
+    }
+
+    .hero-content {
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-content .cta-button {
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
+      background-color: #ff6b00;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .hero-content .cta-button:hover {
+      background-color: #e55d00;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+	
+    section.pricing-section {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    section.pricing-section h2 {
+      font-size: 3.2rem;
+      margin-bottom: 70px;
+      color: #1e1e2f;
+    }
+
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .pricing-card {
+      width: 420px;
+      padding: 50px 40px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: rotateY(8deg) rotateX(8deg);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      border: 2px solid #ff6b00;
+    }
+
+    .pricing-card::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 25px;
+      pointer-events: none;
+    }
+
+    .pricing-card:hover::after {
+      opacity: 1;
+    }
+
+    .pricing-card h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card p {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff6b00;
+      margin-bottom: 30px;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 40px;
+      padding: 0;
+    }
+
+    .pricing-card ul li {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .pricing-card button {
+      background-color: #ff6b00;
+      color: white;
+      border: none;
+      padding: 16px 36px;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      transition: background 0.3s ease;
+    }
+
+    .pricing-card button:hover {
+      background-color: #e75d00;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-card {
+        width: 90%;
+      }
+
+      section.pricing-section h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+	.quote-section {
+      width: 100%;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-box {
+      color: #ffffff;
+      max-width: 900px;
+      animation: zoomFadeIn 1.5s ease forwards;
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    .quote-box blockquote {
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1;
+      margin: 0;
+      position: relative;
+      padding: 0 30px;
+    }
+
+    .quote-box blockquote::before {
+      content: "“";
+      font-size: 140px;
+      color: rgba(255, 165, 0, 0.15);
+      position: absolute;
+      left: -30px;
+      top: -60px;
+      z-index: -1;
+    }
+
+    .quote-box footer {
+      margin-top: 40px;
+      font-size: 3rem;
+      font-weight: 500;
+      color: #ffc107;
+      letter-spacing: 1px;
+      opacity: 0;
+      animation: fadeIn 2s ease 0.8s forwards;
+    }
+
+    .quote-box:hover blockquote {
+      color: #fff;
+      text-shadow: 0 0 10px #ffa726, 0 0 30px #ff9800;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes zoomFadeIn {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .quote-box blockquote {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>Inner Circle by Tony Robbins</header>
+
+	<section class="hero">
+		<h2>Create Momentum in Every Area of Your Life</h2>
+		<p>Fast track your goals with consistent training and accountability</p>
+		<button>Join Now</button>
+	</section>
+
+	<section class="section video-section">
+		<h2>Exclusive Video Insight</h2>
+		<h3>Your journey to transformation starts here</h3>
+		<video controls poster="students-3.webp">
+		<source src="Frontend.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+		</video>
+		<div class="btn-play">
+		<button>Watch Now</button>
+		</div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur interdum, nisl nisi efficitur nisl, vel laoreet nisi nisi vitae nisl. Vivamus malesuada faucibus sapien, ac ullamcorper nisl.</p>
+	</section>
+
+	<section class="section">
+		<h2>Progress in Every Area</h2>
+		<ul class="features">
+		<li>
+			<div class="feature-card">
+			<img src="students-1.webp" alt="Goal">
+			<p>Pursue long-term goals with a clear mindset</p>
+			</div>
+		</li>
+		<li>
+			<div class="feature-card">
+			<img src="students-2.webp" alt="Identity">
+			<p>Refine your identity and habits</p>
+			</div>
+		</li>
+		<li>
+			<div class="feature-card">
+			<img src="students-3.webp" alt="Procrastination">
+			<p>Conquer procrastination</p>
+			</div>
+		</li>
+		<li>
+			<div class="feature-card">
+			<img src="students-4.webp" alt="Wealth and Time">
+			<p>Master wealth and time</p>
+			</div>
+		</li>
+		<li>
+			<div class="feature-card">
+			<img src="students-6.webp" alt="Refuse to Settle">
+			<p>Refuse to settle for less</p>
+			</div>
+		</li>
+		<li>
+			<div class="feature-card">
+			<img src="teacher-1.webp" alt="Purpose">
+			<p>Redesign your purpose</p>
+			</div>
+		</li>
+		</ul>
+	</section>
+
+	<section class="section video-section live-training">
+		<div class="training-container">
+		<div class="training-text">
+			<h2>Live Trainings & All-Access Pass</h2>
+			<ul class="training-list">
+			<li class="active" data-img="students-3.webp">
+				<strong>Weekly Coaching</strong>
+				<span>Live group coaching with Tony’s certified team</span>
+			</li>
+			<li data-img="students-1.webp">
+				<strong>Monthly Mastery</strong>
+				<span>Deep dive topics every month to transform focus</span>
+			</li>
+			<li data-img="students-2.webp">
+				<strong>Live Q&A</strong>
+				<span>Interactive sessions to get personal questions answered</span>
+			</li>
+			<li data-img="students-4.webp">
+				<strong>All Access Portal</strong>
+				<span>On-demand content from Tony’s best programs</span>
+			</li>
+			</ul>
+		</div>
+		<div class="training-image">
+			<img id="trainingDisplay" src="teacher-1.webp" alt="Training Visual">
+		</div>
+		</div>
+	</section>
+
+	<section class="section-wrapper intro-section">
+		<div class="intro-image">
+		<img src="{{ asset('assets_new/img/education/students-4.webp') }}" alt="Person" />
+		</div>
+
+		<div class="intro-content">
+		<h1>Do you have a hunger to increase the quality of your life?</h1>
+		<p>
+			We believe progress equals happiness. And no matter where you’re looking
+			to excel, we’re here to help you forge your pathway to power. Meet the
+			man who’s spent over 45 years creating breakthroughs and transforming
+			lives.
+		</p>
+		<button class="btn">Meet Tony Robbins</button>
+		</div>
+	</section>
+
+	<section class="pricing-section">
+		<h2>Take the First Step</h2>
+		<div class="pricing-grid">
+			<div class="pricing-card">
+			<h3>Monthly Membership</h3>
+			<p>$97/month</p>
+			<ul>
+				<li>Access to live sessions</li>
+				<li>Private community</li>
+				<li>Replay videos</li>
+			</ul>
+			<button>Join Monthly</button>
+			</div>
+			<div class="pricing-card">
+			<h3>Annual Membership</h3>
+			<p>$997/year</p>
+			<ul>
+				<li>Save 15%</li>
+				<li>Bonus coaching tools</li>
+				<li>Early access to events</li>
+			</ul>
+			<button>Join Annually</button>
+			</div>
+		</div>
+		</section>
+	<section class="quote-section">
+	<div class="quote-box">
+		<blockquote>
+		The moment you commit and take action,
+		the universe will respond.
+		</blockquote>
+		<footer>— Tony Robbins</footer>
+	</div>
+	</section>
+	<section class="faq-section">
+		<h2>Frequently Asked Questions</h2>
+		<div class="faq-timeline">
+		<div class="faq-item">
+			<div class="faq-question">What is the Inner Circle?</div>
+			<div class="faq-answer">Ongoing personal growth with Tony's team and community.</div>
+		</div>
+		<div class="faq-item">
+			<div class="faq-question">What happens after I join?</div>
+			<div class="faq-answer">You'll receive access credentials, calendar invites, and resources.</div>
+		</div>
+		<div class="faq-item">
+			<div class="faq-question">Can I cancel anytime?</div>
+			<div class="faq-answer">Yes, you can cancel your membership at any time from your dashboard.</div>
+		</div>
+		</div>
+	</section>
+
+    <section class="video-hero">
+		<video autoplay muted loop playsinline>
+		<source src="Frontend.mp4" type="video/mp4">
+		Your browser does not support HTML5 video.
+		</video>
+		<div class="hero-content">
+		<h2>Create Momentum in Every Area of Your Life</h2>
+		<p>Fast track your goals with consistent training and accountability</p>
+		<button class="cta-button">Join Program</button>
+		</div>
+  	</section>
+	<section class="blog-posts">
+		<div class="blog-header">
+		<h2>Explore Blog Posts</h2>
+		<div class="slider-controls">
+			<button class="slider-btn" id="prevBtn">◀</button>
+			<button class="slider-btn" id="nextBtn">▶</button>
+		</div>
+		</div>
+		<div class="blog-slider" id="blogSlider">
+		<div class="blog-card" style="background-image: url('students-3.webp')">
+			<div class="blog-content">
+			<h3>Success Starts with a Decision</h3>
+			<p>Insights from Tony Robbins on achieving personal breakthroughs.</p>
+			</div>
+		</div>
+		<div class="blog-card" style="background-image: url('students-1.webp')">
+			<div class="blog-content">
+			<h3>Leadership & Business Tools</h3>
+			<p>Enhance your growth strategy with Tony’s expert advice.</p>
+			</div>
+		</div>
+		<div class="blog-card" style="background-image: url('students-2.webp')">
+			<div class="blog-content">
+			<h3>Global Community, Real Results</h3>
+			<p>Hear from members transforming their lives.</p>
+			</div>
+		</div>
+		<div class="blog-card" style="background-image: url('students-4.webp')">
+			<div class="blog-content">
+			<h3>Mindset & Daily Habits</h3>
+			<p>Practical tools to unlock your best self every day.</p>
+			</div>
+		</div>
+		<div class="blog-card" style="background-image: url('students-5.webp')">
+			<div class="blog-content">
+			<h3>Peak State Activation</h3>
+			<p>Leverage emotional mastery and energy for results.</p>
+			</div>
+		</div>
+		</div>
+	</section>
+
+  <footer class="footer">
+    &copy; 2025 Tony Robbins. All rights reserved.
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function() {
+      $('button').on('click', function() {
+        alert('This is a demo. Membership will be activated upon registration.');
+      });
+    });
+    document.querySelectorAll('.training-list li').forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.training-list li').forEach(li => li.classList.remove('active'));
+        item.classList.add('active');
+        document.getElementById('trainingDisplay').src = item.getAttribute('data-img');
+      });
+    });
+    $('.plan').each(function(i) {
+      $(this).delay(i * 200).animate({ opacity: 1, top: 0 }, 600);
+    });
+    $('.faq-item').each(function(i) {
+      $(this).delay(i * 200).animate({ opacity: 1, translateY: 0 }, 600);
+    });
+    $('.faq-question').click(function() {
+      const parent = $(this).closest('.faq-item');
+      parent.toggleClass('opened');
+      parent.find('.faq-answer').slideToggle(300);
+      $('.faq-item').not(parent).removeClass('opened').find('.faq-answer').slideUp(300);
+    });
+    const slider = $('#blogSlider');
+    const cardWidth = $('.blog-card').outerWidth(true);
+    $('#nextBtn').click(function() {
+      slider.animate({ scrollLeft: slider.scrollLeft() + cardWidth }, 400);
+    });
+    $('#prevBtn').click(function() {
+      slider.animate({ scrollLeft: slider.scrollLeft() - cardWidth }, 400);
+    });
+  </script>
+</body>
+</html>
