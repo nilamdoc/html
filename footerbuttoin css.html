@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super Attractive Fixed Footer Button</title>
+<style>
+/* Mobile-only */
+@media (min-width: 768px) {
+  .mobile-footer-cta { display: none; }
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Footer container */
+.mobile-footer-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #01032a, #02053c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  z-index: 9999;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+  box-sizing: border-box;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Button styling */
+.cta-btn {
+  background: linear-gradient(270deg, #ff5722, #ff784e, #ffca28, #ff5722);
+  background-size: 600% 100%;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  min-width: 140px;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(255,87,34,0.5), 0 8px 25px rgba(255,152,0,0.4);
+  animation: bounce 2.5s infinite, gradientMove 4s infinite linear, glowPulse 2.5s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.cta-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 30px rgba(255,87,34,0.8), 0 12px 35px rgba(255,152,0,0.7);
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 6px 20px rgba(255,87,34,0.5), 0 8px 25px rgba(255,152,0,0.4); }
+  50% { box-shadow: 0 10px 30px rgba(255,87,34,0.7), 0 12px 35px rgba(255,152,0,0.6); }
+  100% { box-shadow: 0 6px 20px rgba(255,87,34,0.5), 0 8px 25px rgba(255,152,0,0.4); }
+}
+</style>
+</head>
+<body>
+
+<div style="height:1500px; background:#f1f1f1; padding:20px;">
+  Scroll down to see the super attractive footer button
+</div>
+
+<!-- Mobile Footer -->
+<div class="mobile-footer-cta">
+  <button class="cta-btn" type="button">Start Now</button>
+</div>
+
+</body>
+</html>

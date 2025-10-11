@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Your Digital Coaching Business | EdArya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- 1. Global Variables & Reset --- */
+        :root {
+            --primary-color: #00C896; /* EdArya Green/Teal */
+            --primary-dark: #00A37A;
+            --dark-bg: #1A1A2E; 
+            --mid-bg: #222238; 
+            --light-text: #E0E0E0;
+            --secondary-text: #A0A0A0;
+            --card-bg: #2B2B42; 
+            --learn-bg: #202035; 
+            --border-color: #4A4A6A;
+            --accent-red: #FF4136;
+            --star-color: #FFD700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111111; 
+            color: var(--light-text);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* --- Utility & Titles --- */
+        .section-padding {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 18px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: background-color 0.3s ease, transform 0.2s;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 200, 150, 0.5);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 200, 150, 0.6);
+        }
+        
+        /* --- 2. Header & Navigation --- */
+        header {
+            background-color: var(--dark-bg);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        .nav-links .cta-button-nav {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-transform: capitalize;
+            box-shadow: none;
+        }
+        .hamburger { display: none; }
+
+        /* --- 3. Hero Section (Two Columns) --- */
+        .hero {
+            padding-bottom: 60px;
+            background-color: var(--dark-bg);
+        }
+        .hero-main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero-left-column {
+            flex: 3;
+            min-width: 50%;
+            max-width: 780px; 
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            font-weight: 900;
+        }
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+        .hero p {
+            font-size: 1.2em;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .video-container-wrapper {
+            position: relative; 
+            border: 1px solid var(--border-color); 
+            border-radius: 12px;
+            margin-top: 40px;
+            margin-bottom: 50px; 
+            overflow: hidden; 
+        }
+        .hero-profile-header {
+            background-color: var(--mid-bg);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10; 
+        }
+        .hero-profile-header .name {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--light-text);
+        }
+        .hero-profile-header .title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .video-placeholder {
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            background-color: #000;
+            background-image: url('https://dummyimage.com/780x439/333333/ffffff.png&text=Webinar+Video+Placeholder'); 
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 12px;
+            padding-top: 60px; 
+        }
+        .video-info-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: var(--light-text);
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .video-info-footer .rating span {
+            color: var(--star-color);
+        }
+
+        /* Right Column: Price Box (Sticky) */
+        .hero-price-block-wrapper {
+            flex: 2; 
+            min-width: 350px;
+            max-width: 380px;
+            margin-top: 0; 
+        }
+        .hero-price-block {
+            background-color: var(--card-bg);
+            border: 3px solid var(--primary-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            position: sticky; 
+            top: 100px; 
+        }
+        .hero-price-block .discount-info {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .hero-price-block .strikethrough-price {
+            color: var(--accent-red);
+            text-decoration: line-through;
+            font-size: 1.6em;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+        .hero-price-block .final-price {
+            font-size: 4em;
+            font-weight: 900;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        .hero-price-block .price-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .hero-price-block .cta-button {
+            width: 100%;
+            padding: 15px 0;
+            font-size: 1.2em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+        .inclusions {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            text-align: left;
+        }
+        .inclusions p {
+            font-size: 0.9em;
+            color: var(--secondary-text);
+            margin: 5px 0;
+        }
+
+        /* --- 4. What You'll Learn Section (Accordion Inside Hero) --- */
+        .learn-section-title {
+            font-size: 1.8em;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-align: left;
+            padding-left: 20px;
+        }
+        .learn-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .learn-item {
+            background-color: var(--learn-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .learn-item-header {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .learn-item-header .number {
+            font-size: 1.2em;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .learn-item-header .title {
+            flex-grow: 1;
+        }
+        .learn-item-header svg {
+            transition: transform 0.3s ease;
+        }
+        .learn-item-header.active svg {
+            transform: rotate(180deg);
+        }
+        .learn-item-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+            padding: 0 20px;
+        }
+        .learn-item-body p {
+            padding-bottom: 15px;
+            padding-left: 35px;
+            font-size: 0.95em;
+            color: var(--secondary-text);
+        }
+
+
+        /* --- 5. Mid-Page Header (Proof Title) --- */
+        .mid-page-header { 
+            background-color: var(--dark-bg);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        .mid-page-header h2 { 
+            font-size: 2.2em; 
+            font-weight: 800;
+            margin-bottom: 0;
+        }
+        
+
+        /* --- 6. Testimonials (Proof) --- */
+        .proof-section {
+            background-color: var(--mid-bg); 
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+        .testimonial-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 4px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            color: var(--light-text);
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+        .testimonial-author span {
+            font-weight: 500;
+            color: var(--secondary-text);
+            display: block;
+            font-size: 0.85em;
+        }
+
+        /* --- 7. Mentor Section (REDESIGNED) --- */
+        .mentor-section {
+            background-color: #111111; /* Dark background */
+            padding: 100px 0; /* Extra padding top/bottom */
+        }
+        .mentor-box {
+            background-color: var(--dark-bg); 
+            border: 2px solid var(--primary-color); /* Teal border */
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .mentor-details-content {
+            flex: 1;
+            padding-right: 20px; /* Space from the image */
+            color: var(--light-text);
+        }
+        .mentor-details-content .meet-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .mentor-name {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--light-text);
+            line-height: 1.1;
+        }
+        .mentor-info p {
+            margin-bottom: 20px;
+            font-size: 1em;
+            line-height: 1.7;
+            color: var(--light-text);
+        }
+        .mentor-quote {
+            margin: 30px 0; 
+            border-left: 4px solid var(--primary-color); 
+            padding: 10px 0 10px 20px; 
+            font-style: italic; 
+            color: var(--secondary-text); 
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        .quote-source {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9em;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        .stat-item {
+            text-align: left;
+            flex: 1 1 150px; 
+            padding: 0;
+        }
+        .stat-item strong {
+            font-size: 1.8em;
+            font-weight: 900;
+            color: var(--light-text);
+            display: block;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        .stat-item span {
+            color: var(--secondary-text);
+            font-size: 0.8em;
+            display: block;
+            line-height: 1.3;
+        }
+        
+        /* Mentor Image Column */
+        .mentor-image-column {
+            flex-shrink: 0;
+            width: 350px; /* Fixed width for image container */
+            height: 480px; /* Fixed height for image container */
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: -30px; /* Pull it up and out of the main container padding */
+            margin-right: -30px; /* Pull it right and out of the main container padding */
+        }
+        /* Custom patterned background for the image column */
+        .mentor-image-column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            z-index: 1;
+            /* Using a repeating pattern for the text background effect */
+            background-image: repeating-linear-gradient(
+                -45deg, 
+                rgba(0,0,0,0.1), 
+                rgba(0,0,0,0.1) 1px, 
+                transparent 1px, 
+                transparent 30px
+            ), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><text x="10" y="50" font-family="Poppins" font-size="60" fill="%23000000" fill-opacity="0.1">SIDDHARTH</text><text x="10" y="120" font-family="Poppins" font-size="60" fill="%23000000" fill-opacity="0.1">RAJSEKAR</text><text x="10" y="190" font-family="Poppins" font-size="60" fill="%23000000" fill-opacity="0.1">SIDDHARTH</text><text x="10" y="260" font-family="Poppins" font-size="60" fill="%23000000" fill-opacity="0.1">RAJSEKAR</text></svg>');
+            background-size: cover, 100% 100%;
+            background-repeat: no-repeat;
+            
+        }
+        /* Style for the actual image, placed above the pattern background */
+        .mentor-image-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2; /* Place image above the text pattern background */
+            display: block;
+        }
+        /* Ensure the stats row wraps correctly */
+        .mentor-box .stats-grid {
+            justify-content: flex-start;
+            gap: 30px;
+        }
+        .mentor-box .stat-item {
+            flex: 0 0 calc(50% - 15px); /* Max two items per row */
+            max-width: 250px;
+        }
+
+        /* --- 8. What You'll Gain Section --- */
+        .gain-section {
+            background-color: #111111; 
+            padding: 80px 0;
+            overflow: hidden;
+            position: relative; 
+        }
+        .gain-section .section-title {
+            color: var(--light-text); 
+            margin-bottom: 20px;
+        }
+        .gain-section p.subtitle { 
+            font-size: 1.1em;
+            color: var(--secondary-text);
+            margin-bottom: 50px;
+            font-weight: 600;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .gain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px 30px; 
+            max-width: 1000px; 
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        .gain-item {
+            text-align: left; 
+            padding: 0; 
+            border-radius: 0;
+            background-color: transparent; 
+            border-top: none; 
+            display: flex; 
+            align-items: flex-start; 
+            gap: 20px;
+        }
+        .gain-item .icon-wrapper {
+            flex-shrink: 0; 
+            width: 50px; 
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%; 
+            background-color: var(--primary-color); 
+            box-shadow: 0 0 15px rgba(0, 200, 150, 0.4);
+        }
+        .gain-item .icon-wrapper svg {
+            width: 28px; 
+            height: 28px;
+            color: var(--dark-bg); 
+            stroke-width: 2;
+        }
+        .gain-item-content {
+            flex-grow: 1;
+        }
+        .gain-item h4 {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 8px; 
+            line-height: 1.3;
+            color: var(--light-text); 
+        }
+        .gain-item p {
+            font-size: 0.95em;
+            color: var(--secondary-text);
+            margin: 0; 
+            line-height: 1.6;
+        }
+        .gain-section .cta-button {
+            margin-top: 70px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 40px;
+        }
+        .gain-section .cta-button svg {
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+        .gain-section .cta-button:hover svg {
+            transform: translateX(5px);
+        }
+        .gain-section::after {
+            content: '';
+            position: absolute;
+            bottom: -100px; 
+            right: -100px; 
+            width: 600px;
+            height: 600px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><path d="M 0 400 Q 100 200, 200 200 T 400 0 L 400 400 Z" fill="none" stroke="%2300C896" stroke-width="4" stroke-opacity="0.1"/></svg>') no-repeat center center;
+            background-size: contain;
+            pointer-events: none;
+            opacity: 0.8;
+            z-index: 1;
+            transform: rotate(-30deg);
+        }
+
+
+        /* --- 9. Curated Impact Block --- */
+        .curated-impact {
+            background-color: var(--dark-bg);
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+            overflow: hidden; 
+            position: relative;
+        }
+        .impact-content-box {
+            background-color: var(--card-bg); 
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid var(--primary-color); 
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex; 
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            z-index: 10;
+        }
+        .impact-text-group {
+            flex-grow: 1;
+        }
+        .impact-text-group h4 {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color); 
+            line-height: 1.1;
+        }
+        .impact-text-group p {
+            font-size: 1em;
+            color: var(--light-text);
+            margin: 0;
+        }
+        .impact-icon {
+            flex-shrink: 0; 
+            width: 100px; 
+            height: 100px;
+            color: var(--primary-color); 
+        }
+        .impact-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke-width: 1; 
+        }
+        .curated-impact::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+
+        /* --- 10. FAQ Styling (Accordion) --- */
+        .faq-section {
+            background-color: var(--mid-bg); 
+        }
+        .faq-question svg {
+            transition: transform 0.3s ease;
+        }
+        .faq-question.active svg {
+            transform: rotate(180deg);
+        }
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .faq-question {
+            background-color: var(--card-bg);
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .faq-answer {
+            background-color: #3A3A5A;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+            padding: 0 20px;
+        }
+        .faq-answer p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: var(--light-text);
+        }
+        
+        /* --- 11. Final CTA Banner --- */
+        .final-cta-banner {
+            background-color: #111111; 
+            padding: 60px 0;
+            text-align: center;
+        }
+        .final-cta-content {
+            background-color: var(--primary-color); 
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: 20px; 
+            position: relative;
+            max-width: 1100px; 
+            margin: 0 auto;
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .final-cta-content .cta-button {
+            background-color: #1A1A1A; 
+            color: var(--primary-color); 
+            text-transform: capitalize;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 15px 30px;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 8px; 
+        }
+        .final-cta-content .cta-button:hover {
+            background-color: #000000; 
+            color: var(--primary-dark);
+            transform: none; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+        }
+        .final-cta-content .cta-button svg {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+            width: 20px;
+            height: 20px;
+        }
+        .final-cta-content .cta-button:hover svg {
+            transform: translateX(5px);
+        }
+        .final-cta-content h2 {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            color: #1A1A1A; 
+        }
+        .final-cta-content p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #2b2b2b; 
+            font-weight: 600;
+        }
+        .final-cta-content::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><path d="M 200 200 C 350 200, 350 50, 400 0 L 400 200 Z" fill="none" stroke="%231A1A1A" stroke-width="4"/></svg>') no-repeat right bottom;
+            background-size: 80% 80%;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+
+        /* --- Footer Styles --- */
+        footer {
+            background-color: var(--dark-bg);
+            padding: 40px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .footer-links-grid strong {
+            display: block;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .footer-links-grid a {
+            display: block;
+            color: var(--secondary-text);
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: var(--secondary-text);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 1050px) {
+            .mentor-box { flex-direction: column; align-items: center; }
+            .mentor-image-column { 
+                width: 100%; 
+                max-width: 400px; 
+                height: 500px;
+                margin: 0 0 30px 0; /* Center it, give space below */
+            }
+            .mentor-details-content { 
+                padding-right: 0; 
+                text-align: center;
+            }
+            .mentor-info p { text-align: left; } /* Keep paragraphs left-aligned for readability */
+            .mentor-details-content .meet-title { text-align: center; }
+            .mentor-name { text-align: center; font-size: 2.2em; }
+            .mentor-quote { text-align: left; margin-left: auto; margin-right: auto; }
+            .stats-grid { justify-content: center; }
+        }
+        @media (max-width: 992px) {
+            .hero-main-content { flex-direction: column; align-items: center; gap: 20px; }
+            .hero-left-column { width: 100%; min-width: unset; order: 2; text-align: center; max-width: 100%; }
+            .hero-price-block-wrapper { width: 100%; max-width: 450px; order: 1; position: static; }
+            .hero h1 { font-size: 2.5em; }
+            .mentor-content-wrapper { flex-direction: column; align-items: center; text-align: center; }
+            .mentor-image img { max-width: 100%; width: 300px; margin-bottom: 20px; }
+            .stats-grid { justify-content: center; gap: 20px 40px; width: 100%; }
+            .mentor-box .stat-item { flex: 0 0 calc(50% - 15px); }
+            
+            /* Curated Impact Responsive */
+            .impact-content-box { flex-direction: column; text-align: center; padding: 30px; }
+            .impact-icon { margin-bottom: 20px; }
+            .impact-text-group h4 { font-size: 1.5em; }
+            
+            /* Gain Section Responsive */
+            .gain-grid { grid-template-columns: 1fr; gap: 40px; }
+            .gain-item { text-align: center; flex-direction: column; align-items: center; }
+            .gain-item .icon-wrapper { margin-bottom: 15px; }
+
+            .final-cta-content { padding: 50px 20px; }
+            .final-cta-content h2 { font-size: 2.5em; }
+            .final-cta-content::after { display: none; } 
+            .footer-links-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .hero-price-block .final-price { font-size: 3em; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .final-cta-content h2 { font-size: 2em; }
+            .mentor-box { padding: 20px; }
+        }
+        @media (max-width: 576px) {
+            .stat-item { flex: 1 1 100%; }
+            .learn-item-body p { padding-left: 15px; }
+            .footer-links-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">EdArya</a>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#register" class="cta-button cta-button-nav">Join Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="register">
+            <div class="hero-main-content">
+                
+                <div class="hero-left-column">
+                    <h1 style="color: var(--light-text);">Build A Profitable <span style="color: var(--primary-color);">Al-Powered Online Business</span> That Gives You Freedom</h1>
+                    <p>Join **Siddharth Rajsekar's AI Coach Launchpad** and learn how to build a scalable coaching business from scratch - even if you've never launched before.</p>
+                    
+                    <div class="video-container-wrapper">
+                        <div class="hero-profile-header">
+                            <span class="name">Siddharth Rajsekar</span>
+                            <span class="title">INDIA'S LEADING DIGITAL COACHING MENTOR</span>
+                        </div>
+                        
+                        <div class="video-placeholder">
+                            <div class="play-button">
+                                <svg width="40" height="40" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                            <div class="video-info-footer">
+                                <span class="rating">4.9 <span>⭐️</span> 6000+ Reviews • Excellent</span>
+                                <span class="trusted">Trusted by **30,000+** Coaches</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="learn-section-content">
+                        <div class="learn-section-title">What You'll Learn</div>
+                        <div class="learn-accordion">
+                            <div class="learn-item">
+                                <div class="learn-item-header">
+                                    <span class="number">1.</span>
+                                    <span class="title">The Coaching Business Blueprint</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="learn-item-body"><p>Understand the foundational steps to start your digital coaching business from idea to launch.</p></div>
+                            </div>
+                            <div class="learn-item">
+                                <div class="learn-item-header">
+                                    <span class="number">2.</span>
+                                    <span class="title">What the Experts Do Differently</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="learn-item-body"><p>Explore real-world actions, systems, and behaviors that set successful coaches apart from the rest.</p></div>
+                            </div>
+                            <div class="learn-item">
+                                <div class="learn-item-header">
+                                    <span class="number">3.</span>
+                                    <span class="title">The Evolution of Digital Coaching</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="learn-item-body"><p>Learn how coaching models have changed over time and how to position yourself in today's fast-moving landscape.</p></div>
+                            </div>
+                            <div class="learn-item">
+                                <div class="learn-item-header">
+                                    <span class="number">4.</span>
+                                    <span class="title">Coaching Personas & Self-Discovery</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="learn-item-body"><p>Identify your unique coaching style and understand how to tailor your growth journey through clarity and trial-and-error.</p></div>
+                            </div>
+                            <div class="learn-item">
+                                <div class="learn-item-header">
+                                    <span class="number">5.</span>
+                                    <span class="title">Why Most Coaches Fail (and How Not To)</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="learn-item-body"><p>Uncover common mistakes, mindset gaps, and system flaws that derail most creators and how to avoid them.</p></div>
+                            </div>
+                            <div class="learn-item">
+                                <div class="learn-item-header">
+                                    <span class="number">6.</span>
+                                    <span class="title">Smart Scaling with Systems & AI</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="learn-item-body"><p>Learn how to stack your offers, build lean systems, and use AI to simplify, automate, and accelerate your growth journey.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-price-block-wrapper">
+                    <div class="hero-price-block">
+                        <div class="discount-info">Limited Time Offer - 80% OFF</div>
+                        <div class="price-wrapper">
+                            <span class="strikethrough-price">₹499/-</span>
+                            <span class="final-price">₹99/-</span>
+                        </div>
+                        <a href="#" class="cta-button">Register Now for ₹99/-</a>
+                        <div class="inclusions">
+                            <p style="color: var(--light-text); font-weight: 600;">Inclusion</p>
+                            <p>✓ 2 Launch Courses</p>
+                            <p>✓ 100+ Case Studies</p>
+                            <p>✓ AI Coach Launchpad</p>
+                            <p>✓ Language: English</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mid-page-header">
+            <div class="container">
+                <h2 style="color: var(--light-text); font-size: 2.2em; font-weight: 800; margin-bottom: 0;">Proof that when you learn with purpose, transformation follows.</h2>
+            </div>
+        </section>
+
+        <section class="proof-section section-padding">
+            <div class="container">
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p>"I always knew I am Extra-Ordinary and I feel truly blessed to be with Sid as my journey to my Greatness starts here. I am super duper amazed by the Ethics, the concepts, the system and the Strong defining Pillars and the proven Bluprints. I am going to be the Multi-billion Dollar Brand for sure."</p>
+                        <div class="testimonial-author">Sudha Choudhary<span>38, Mumbai</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Thanks Sid - The way you are extending your support at every step is awesome. Backed up with strong work ethics, the idea of giving back to the society, setting up a positive and clear intention as to why one should be in this industry apart from making money is just brilliant."</p>
+                        <div class="testimonial-author">Joseph Timothy<span>38, Mumbai</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"The trainings were detailed, to the point and actionable. I particularly liked the content around niche clarity and personal branding."</p>
+                        <div class="testimonial-author">Smita Satyavada<span>28 • Delhi NCR</span></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"There is so much to learn from you Sidz !!! In every hackathon learning new tactics, new perspectives around my topic. You are Demi-God of Digital World ! More than 5 Stars to you, your dedication towards your work and members ! Feeling fortunate to be part of your community."</p>
+                        <div class="testimonial-author">Trupti Pala<span>68 • Mysore</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mentor-section">
+            <div class="container">
+                <div class="mentor-box">
+                    
+                    <div class="mentor-details-content">
+                        <p class="meet-title">Meet Your Mentor</p>
+                        <h4 class="mentor-name">Siddharth Rajsekar</h4>
+                        
+                        <div class="mentor-info">
+                            <p>Siddharth Rajsekar is the architect behind India's largest digital coaching community, the Internet Lifestyle Hub, with over **30,000 paid members**.</p>
+                            
+                            <p>After a decade of experience in Digital Marketing and working with global names like Tony Robbins, Jack Canfield, and Brian Tracy, Sidz created the **Freedom Business Blueprint** - a proven system to help everyday experts build and scale coaching businesses online. His unique strength is making complex systems simple and actionable.</p>
+                        </div>
+                        
+                        <blockquote class="mentor-quote">
+                            "I don't just teach systems. I teach freedom and how to turn your knowledge into income, impact, and time flexibility." 
+                            <span class="quote-source">— Siddharth Rajsekar</span>
+                        </blockquote>
+
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <strong>30,000+</strong>
+                                <span>Paid members in Internet Lifestyle Hub</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>₹1000+ Crores</strong>
+                                <span>in cumulative student revenue generated</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>300+ students</strong>
+                                <span>have crossed ₹1 Cr+ in coaching income</span>
+                            </div>
+                            <div class="stat-item">
+                                <strong>5/5</strong>
+                                <span>average Trustpilot rating from 9000+ learners</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mentor-image-column">
+                        <img src="https://dummyimage.com/350x480/00C896/1A1A2E.png&text=Siddharth+Rajsekar" alt="Siddharth Rajsekar - Digital Coach">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="gain-section">
+            <div class="container">
+                <h2 class="section-title">What You'll Gain</h2>
+                <p class="subtitle">Beyond skills - unlock mindset, meaning, and momentum.</p>
+                <div class="gain-grid">
+                    <div class="gain-item">
+                        <div class="icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="gain-item-content">
+                            <h4>Step Into Your Calling</h4>
+                            <p>Feel confident that your voice matters and that your knowledge can change lives.</p>
+                        </div>
+                    </div>
+                    <div class="gain-item">
+                        <div class="icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M16 8L8 16"></path>
+                                <path d="M16 16L8 8"></path>
+                            </svg>
+                        </div>
+                        <div class="gain-item-content">
+                             <h4>Build with Purpose, Not Hustle</h4>
+                             <p>Replace confusion with clarity and replace burnout with sustainable growth.</p>
+                        </div>
+                    </div>
+                    <div class="gain-item">
+                        <div class="icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 17H2V12H22V17Z" fill="none"></path>
+                                <path d="M7 2H17L22 7V22H2V7L7 2Z"></path>
+                                <path d="M12 7V22"></path>
+                                <path d="M16 7V22"></path>
+                                <path d="M8 7V22"></path>
+                            </svg>
+                        </div>
+                        <div class="gain-item-content">
+                            <h4>Imagine Living on Your Own Terms</h4>
+                            <p>Plan your coaching empire around your life, not the other way round.</p>
+                        </div>
+                    </div>
+                    <div class="gain-item">
+                        <div class="icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" fill="none"></path>
+                                <path d="M14 2V8H20"></path>
+                                <path d="M8 15H16"></path>
+                                <path d="M8 11H16"></path>
+                            </svg>
+                        </div>
+                        <div class="gain-item-content">
+                            <h4>Feel Proud of Your Impact</h4>
+                            <p>Watch your students succeed, knowing you played a critical part in their journey.</p>
+                        </div>
+                    </div>
+                    <div class="gain-item">
+                        <div class="icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z" fill="none"></path>
+                                <path d="M8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12Z" fill="none"></path>
+                                <path d="M9 12L12 12"></path>
+                                <path d="M12 12L15 12"></path>
+                                <path d="M12 9L12 15"></path>
+                            </svg>
+                        </div>
+                        <div class="gain-item-content">
+                            <h4>Stand Out with Confidence</h4>
+                            <p>Stop second-guessing and own your process with a proven blueprint.</p>
+                        </div>
+                    </div>
+                    <div class="gain-item">
+                        <div class="icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21V19C17 18.4696 16.7893 17.9609 16.4142 17.5858C16.0391 17.2107 15.5304 17 15 17H9C8.46957 17 7.96086 17.2107 7.58579 17.5858C7.21071 17.9609 7 18.4696 7 19V21"></path>
+                                <path d="M12 13C14.2091 13 16 11.2091 16 9C16 6.79086 14.2091 5 12 5C9.79086 5 8 6.79086 8 9C8 11.2091 9.79086 13 12 13Z"></path>
+                                <path d="M22 10C22 14.4183 18.4183 18 14 18"></path>
+                                <path d="M2 10C2 14.4183 5.58172 18 10 18"></path>
+                            </svg>
+                        </div>
+                        <div class="gain-item-content">
+                            <h4>Join a Movement, Not Just a Course</h4>
+                            <p>Join a community of fellow coaches cheering you on as you grow.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#register" class="cta-button">
+                    Get Instant Access Now
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="curated-impact">
+            <div class="container">
+                <div class="impact-content-box">
+                    <div class="impact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <path d="M12 2v2M12 20v2M20 12h2M2 12h2"></path>
+                            <path d="M15.0001 15.0001L15 15L15.0001 15.0001ZM9.00007 9.00007L9 9L9.00007 9.00007Z"></path>
+                        </svg>
+                    </div>
+                    <div class="impact-text-group">
+                        <h4>Curated For Real Impact</h4>
+                        <p>We only bring what's been trusted, tested, and truly transformative. Every session is designed to be meaningful, focused, and worth your attention.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section section-padding">
+            <div class="container">
+                <div class="section-title">Frequently Asked Questions (FAQ)</div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question"><span>I have no prior coaching experience. Can I attend this webinar?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        <div class="faq-answer">
+                            <p>Yes! This session is perfect for beginners. It's designed to introduce you to the fundamentals of building a coaching business from scratch.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>What exactly will I learn in this webinar?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        <div class="faq-answer">
+                            <p>You'll learn the step-by-step blueprint to start your digital coaching journey, understand how successful experts operate, and explore how the industry is evolving.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>Will I get a roadmap to build my coaching business?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        <div class="faq-answer">
+                            <p>Yes, Siddharth shares the foundational structure and key elements needed to build and grow a digital coaching business effectively.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>Does this session include AI training?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        <div class="faq-answer">
+                            <p>Yes. You'll be introduced to how AI can be used to simplify and speed up your content creation, audience engagement, and workflow - without needing any technical skills.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>How is this different from other coaching or business webinars?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        <div class="faq-answer">
+                            <p>It's focused, beginner-friendly, and based on real-world insights from over 150+ successful coaches. The session is built on practical experience, not theory.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>Will I learn why most coaches fail?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        <div class="faq-answer">
+                            <p>Yes, Siddharth covers the common reasons why digital coaches struggle and how to avoid those mistakes early on.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><span>What do I need to bring to the session?</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                        <div class="faq-answer">
+                            <p>Just a notepad, your focus, and an open mind. This webinar is about gaining clarity and confidence to begin your journey the smart way.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta-banner">
+            <div class="final-cta-content">
+                <h2>Ready To Launch Your Digital Coaching Journey?</h2>
+                <p>Clear steps • Actionable systems • Fast-track growth</p>
+                <a href="#register" class="cta-button">
+                    Reserve Your Spot Now
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links-grid">
+                <div>
+                    <strong>Where Learning Meets Purpose.</strong>
+                </div>
+                <div>
+                    <strong>Explore</strong>
+                    <a href="#">Programs</a>
+                    <a href="#">Why Edarya?</a>
+                    <a href="#">Testimonials</a>
+                    <a href="#">Join as a Coach</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div>
+                    <strong>Social</strong>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+                <div>
+                    <strong>Contact</strong>
+                    <a href="mailto:support@edarya.io">support@edarya.io</a>
+                </div>
+            </div>
+            <p class="copyright">Copyright © 2025 Edarya. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => toggleAccordion(question, true));
+            });
+
+            // Learnings accordion functionality
+            const learnHeaders = document.querySelectorAll('.learn-item-header');
+            learnHeaders.forEach(header => {
+                header.addEventListener('click', () => toggleAccordion(header, false));
+            });
+
+            // Universal accordion toggle function
+            function toggleAccordion(header, isFaq) {
+                const answer = header.nextElementSibling;
+                const chevron = header.querySelector('svg');
+                const isActive = header.classList.contains('active');
+                
+                const selector = isFaq ? '.faq-question.active' : '.learn-item-header.active';
+                
+                // Close all other open headers of the same type
+                document.querySelectorAll(selector).forEach(openHeader => {
+                    if (openHeader !== header) {
+                        openHeader.classList.remove('active');
+                        openHeader.querySelector('svg').style.transform = "rotate(0deg)";
+                        const openAnswer = openHeader.nextElementSibling;
+                        if (openAnswer) {
+                            openAnswer.style.maxHeight = "0";
+                        }
+                    }
+                });
+
+                // Toggle current header
+                header.classList.toggle('active', !isActive);
+                if (answer) {
+                    if (!isActive) {
+                        // Set maxHeight to scrollHeight for smooth opening
+                        const additionalPadding = isFaq ? 0 : 35; 
+                        answer.style.maxHeight = answer.scrollHeight + additionalPadding + "px"; 
+                        chevron.style.transform = "rotate(180deg)";
+                    } else {
+                        answer.style.maxHeight = "0";
+                        chevron.style.transform = "rotate(0deg)";
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

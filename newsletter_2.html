@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Edge Newsletter - How Do You Position Yourself in Life? : A Transformational Conversation with CRPF Officers</title>
+
+  <!-- Google Fonts: Libre Serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Serif:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Libre Serif', serif;
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-padding-top: 90px;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: #4361F8;
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 600px;
+      margin: 100px auto 40px;
+      padding: 0 20px 40px;
+    }
+
+    /* Sticky Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 3px solid #4361F8;
+      padding: 15px 20px;
+      z-index: 999;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .header-logo img {
+      max-height: 50px;
+      width: auto;
+      display: block;
+    }
+    .header-info {
+      font-size: 14px;
+      font-weight: 700;
+      color: #000;
+      margin-top: 8px;
+      flex: 1 1 auto;
+      text-align: right;
+    }
+    .header-info a {
+      color: #2563eb;
+      margin-left: 12px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .header-info a:hover,
+    .header-info a:focus {
+      color: #4361F8;
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+      border: 1px solid #D7D7D7;
+      border-radius: 8px;
+      background: #fff;
+      padding: 25px 30px;
+      margin-top: 30px;
+      box-shadow: 0 2px 8px rgb(67 97 248 / 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    section:hover {
+      box-shadow: 0 6px 15px rgb(67 97 248 / 0.2);
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.36px;
+      color: #4361F8;
+      margin-bottom: 16px;
+      border-left: 4px solid #4361F8;
+      padding-left: 12px;
+    }
+
+    /* Headings */
+    h2 {
+      font-weight: 700;
+      font-size: 26px;
+      color: #000;
+      margin: 0 0 14px 0;
+      line-height: 1.2;
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 20px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: #2563eb;
+      font-style: normal;
+      line-height: 1.3;
+    }
+    h4 {
+      font-weight: 600;
+      font-size: 18px;
+      margin-top: 26px;
+      margin-bottom: 12px;
+      color: #4361F8;
+      font-style: normal;
+      line-height: 1.3;
+    }
+
+    /* Paragraphs */
+    p {
+      margin-bottom: 18px;
+      font-weight: 400;
+      color: #222;
+    }
+    p strong {
+      font-weight: 700;
+    }
+
+    /* Lists */
+    ul {
+      padding-left: 22px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    /* Blockquote */
+    blockquote {
+      border-left: 4px solid #4361F8;
+      padding-left: 16px;
+      margin: 20px 0 30px 0;
+      font-style: italic;
+      color: #555;
+      background: #f0f4ff;
+      border-radius: 6px;
+      line-height: 1.4;
+    }
+    blockquote p {
+      margin: 0;
+      font-weight: 600;
+      color: #2c3e9c;
+    }
+
+    /* Images */
+    img.image-full {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 25px;
+      box-shadow: 0 4px 12px rgb(67 97 248 / 0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    img.image-full:hover,
+    img.image-full:focus {
+      transform: scale(1.02);
+      outline: none;
+    }
+
+    /* Video embed */
+    .video-wrapper {
+      margin-top: 30px;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(67 97 248 / 0.15);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      font-weight: 700;
+      text-align: center;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #4361F8, #2563eb);
+      color: #fff;
+      border: none;
+      box-shadow: 0 5px 15px rgb(67 97 248 / 0.4);
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      user-select: none;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .btn:hover,
+    .btn:focus {
+      background: linear-gradient(135deg, #2563eb, #4361F8);
+      box-shadow: 0 8px 20px rgb(37 99 235 / 0.6);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    /* Share Buttons Floating Vertical */
+    .share-buttons-floating {
+      position: fixed;
+      top: 150px;
+      right: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 9999;
+    }
+    .share-buttons-floating a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #4361F8;
+      border-radius: 50%;
+      box-shadow: 0 3px 8px rgba(67, 97, 248, 0.4);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .share-buttons-floating a img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(100%) contrast(120%);
+      transition: filter 0.3s ease;
+    }
+    .share-buttons-floating a:hover,
+    .share-buttons-floating a:focus {
+      background: #2563eb;
+      transform: scale(1.1);
+      outline: none;
+    }
+    .share-buttons-floating a:hover img,
+    .share-buttons-floating a:focus img {
+      filter: brightness(120%) contrast(130%);
+    }
+
+    /* Footer */
+    .footer-section {
+      background: #fff;
+      margin-top: 60px;
+      padding: 40px 30px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+      border-top: 5px solid #2563eb;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+      border-radius: 0 0 8px 8px;
+    }
+    .footer-section h3 {
+      font-size: 20px;
+      color: #2563eb;
+      margin-top: 30px;
+      font-weight: 700;
+    }
+    .footer-section p, 
+    .footer-section ul {
+      margin: 12px 0;
+    }
+    .footer-section ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+    .footer-section a {
+      color: #2563eb;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .footer-section a:hover,
+    .footer-section a:focus {
+      color: #4361F8;
+      outline: none;
+    }
+    .footer-section p:last-child {
+      margin-bottom: 0;
+    }
+    .footer-section ul li {
+      margin-bottom: 8px;
+    }
+    .footer-section p[style*="text-align:center"] {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Signature image styling */
+    .signature {
+      display: block;
+      margin: 30px auto 0;
+      width: 160px;
+      border-radius: 6px;
+      filter: drop-shadow(0 2px 2px rgb(37 99 235 / 0.3));
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      .container {
+        margin: 120px 16px 30px;
+        padding: 0 16px 30px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 16px;
+      }
+      .header-info {
+        text-align: left;
+        margin-top: 6px;
+        font-size: 13px;
+      }
+      section {
+        padding: 20px 20px 25px;
+        margin-top: 24px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+      h3 {
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      h4 {
+        font-size: 16px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+      }
+      .btn {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 17px;
+      }
+      .share-buttons-floating {
+        top: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        width: auto;
+        gap: 16px;
+        background: rgba(255 255 255 / 0.9);
+        padding: 8px 16px;
+        border-radius: 40px;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+      }
+      .share-buttons-floating a {
+        width: 36px;
+        height: 36px;
+      }
+      .signature {
+        width: 140px;
+        margin: 20px auto 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="header-logo" aria-label="The Edge Newsletter Logo">
+      <img src="https://rd.local/external/assets_new/img/newsletters/newsletter_header.png" alt="The Edge Newsletter">
+    </div>
+    <div class="header-info" aria-label="Newsletter date and links">
+      May 1, 2025 |
+      <a href="https://ruchidoctor.com/explore/newsletters" target="_blank" rel="noopener">Issue Archive</a> |
+      <a href="https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers" target="_blank" rel="noopener">View Online</a>
+    </div>
+  </header>
+
+  <!-- Floating Share Buttons -->
+  <nav class="share-buttons-floating" aria-label="Share newsletter">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers" target="_blank" rel="noopener" aria-label="Share on Facebook">
+      <img src="https://rd.local/external/assets_new/img/facebook.png" alt="Facebook Icon" />
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+      <img src="https://rd.local/external/assets_new/img/linkedin.png" alt="LinkedIn Icon" />
+    </a>
+    <a href="https://twitter.com/intent/tweet?text=https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers" target="_blank" rel="noopener" aria-label="Share on Twitter">
+      <img src="https://rd.local/external/assets_new/img/twitter-background.png" alt="Twitter Icon" />
+    </a>
+  </nav>
+
+  <main class="container" role="main" aria-label="Newsletter Content">
+
+    <!-- Shareable Quote Section -->
+    <section aria-labelledby="shareable-title">
+      <div class="section-title" id="shareable-title">Shareable</div>
+      <h2>Today's news update:</h2>
+      <a href="https://rd.local/external/assets_new/img/newsletters/newsletters-010.png" target="_blank" rel="noopener">
+        <img src="https://rd.local/external/assets_new/img/newsletters/newsletters-010.png" class="image-full" alt="Ruchi's Quote" tabindex="0" />
+      </a>
+      <p>Share this newsletter to inspire someone...</p>
+    </section>
+
+    <!-- Newsletter Description / Main Content -->
+    <section aria-labelledby="positioning-title" class="newsletter_description">
+      <div class="section-title" id="positioning-title">How Do You Position Yourself in Life?</div>
+      <h2>A Transformational Conversation with CRPF Officers</h2>
+      <p><strong>by Ruchi Doctor</strong></p>
+
+      <p><strong>Dear Reader,</strong></p>
+      <p>Some rooms carry the weight of responsibility, service, and strength.</p>
+      <p>And recently, I had the honour of stepping into such a room — inside a session with CRPF officers, men and women who carry the safety of our nation on their shoulders.</p>
+
+      <p>But instead of only speaking about systems, mindset, or tactical skills — I began with a deeper, quieter question:</p>
+      <h3>“How do you position yourself in life?”</h3>
+
+      <h4>Why This Question Matters</h4>
+      <p>In a world where titles, ranks, roles, and routines define us — we often forget: positioning isn’t about the external.</p>
+      <p>It’s about how you see yourself when no one is watching.</p>
+      <p>It’s about:</p>
+      <ul>
+        <li>What lens you view life through</li>
+        <li>How you interpret success and setbacks</li>
+        <li>And most importantly… how you define your role in the bigger story</li>
+      </ul>
+
+      <h4>What I Shared with the Officers</h4>
+      <p>I said this with all the reverence I hold:</p>
+      <blockquote>
+        <p>“You can position yourself as a survivor, or a creator.<br>
+        As someone life is happening to — or someone who shapes meaning in every moment.<br>
+        You’re not just serving the country.<br>
+        You’re also serving the story you choose to live by.”</p>
+      </blockquote>
+
+      <p>And in that moment — I saw stillness.<br>
+      I saw reflection.<br>
+      I saw leaders who were willing to pause and meet themselves.</p>
+
+      <h4>Positioning Isn’t a Label — It’s an Identity</h4>
+      <p>You can position yourself as:</p>
+      <ul>
+        <li>A helper… or a healer.</li>
+        <li>A fighter… or a force for peace.</li>
+        <li>A person with a job… or a person with a mission.</li>
+      </ul>
+
+      <p>The moment you choose your position consciously — everything around you starts to align.<br>
+      Because clarity is the birthplace of command.</p>
+
+      <h4>What I Witnessed in That Session</h4>
+      <p>In those CRPF officers, I saw:</p>
+      <ul>
+        <li>Strength without noise</li>
+        <li>Discipline without ego</li>
+        <li>Leadership without the need for validation</li>
+      </ul>
+
+      <p>And yet — a hunger to grow deeper, live more meaningfully, and evolve beyond uniformed roles.</p>
+      <p>And that made me realize:</p>
+      <p><strong>No matter your badge, your title, your income, or your past — you get to position yourself every single day.</strong></p>
+
+      <h4>A Question For You</h4>
+      <p><strong>How do you position yourself in life, today?</strong></p>
+      <p>Are you shaping your story — or letting the story shape you?</p>
+      <p>What lens are you choosing to see through?</p>
+
+      <a href="https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers#subscribe" class="btn" role="button" tabindex="0">Subscribe to The Edge Newsletter</a>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer-section" aria-label="Newsletter footer information">
+      <h3>Contact & More</h3>
+      <p>Email: <a href="mailto:contact@ruchidoctor.com">contact@ruchidoctor.com</a></p>
+      <p>Follow us on <a href="https://facebook.com/ruchidoctor" target="_blank" rel="noopener">Facebook</a>, <a href="https://linkedin.com/company/ruchidoctor" target="_blank" rel="noopener">LinkedIn</a>, and <a href="https://twitter.com/ruchidoctor" target="_blank" rel="noopener">Twitter</a>.</p>
+      <p style="text-align:center;">© 2025 Ruchi Doctor. All rights reserved.</p>
+      <img src="https://rd.local/external/assets_new/img/newsletters/signature.png" alt="Ruchi Doctor Signature" class="signature" />
+    </section>
+  </main>
+
+</body>
+</html>

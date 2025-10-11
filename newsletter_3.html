@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Edge Newsletter - How Do You Position Yourself in Life? : A Transformational Conversation with CRPF Officers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Libre Serif', Georgia, serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #2c3e50;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto 40px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    /* Header Styling */
+    .header-logo {
+      text-align: center;
+      padding: 30px 0;
+      border-bottom: 3px double #c0392b;
+      margin-bottom: 20px;
+    }
+
+    .header-logo img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .header-logo:hover img {
+      transform: scale(1.02);
+    }
+
+    .newsletter-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #c0392b;
+      text-align: center;
+      margin: 20px 0;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .date-info {
+      text-align: center;
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-bottom: 30px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #c0392b;
+    }
+
+    .date-info a {
+      color: #c0392b;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      margin: 0 5px;
+    }
+
+    .date-info a:hover {
+      color: #a93226;
+      text-decoration: underline;
+    }
+
+    /* Section Styling */
+    .section {
+      margin: 40px 0;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid #ecf0f1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .section:nth-child(1) { animation-delay: 0.1s; }
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.3s; }
+    .section:nth-child(4) { animation-delay: 0.4s; }
+    .section:nth-child(5) { animation-delay: 0.5s; }
+    .section:nth-child(6) { animation-delay: 0.6s; }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #c0392b, #e74c3c);
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      color: #c0392b;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: #c0392b;
+      transition: width 0.3s ease;
+    }
+
+    .main-content:hover .section-title::after {
+      width: 80px;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      color: #2c3e50;
+      margin: 0 0 20px;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: #34495e;
+      margin: 25px 0 15px;
+      font-weight: 700;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      color: #2c3e50;
+      margin: 20px 0 10px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      color: #34495e;
+    }
+
+    strong {
+      color: #2c3e50;
+      font-weight: 700;
+    }
+
+    /* Quote Styling */
+    blockquote {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      border-left: 5px solid #c0392b;
+      margin: 30px 0;
+      padding: 25px 30px;
+      font-style: italic;
+      font-size: 1.1rem;
+      border-radius: 0 8px 8px 0;
+      position: relative;
+      color: #2c3e50;
+    }
+
+    blockquote::before {
+      content: '"';
+      font-size: 4rem;
+      color: #c0392b;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      opacity: 0.3;
+    }
+
+    /* List Styling */
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+      color: #34495e;
+    }
+
+    ul li::before {
+      content: '▸';
+      color: #c0392b;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Image Styling */
+    .image-full {
+      width: 100%;
+      border-radius: 12px;
+      margin: 25px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-full:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Share Buttons */
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .share-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .share-buttons a:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .share-buttons a img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Subscribe Section */
+    .subscribe-section {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #ffffff;
+      padding: 50px 30px;
+      text-align: center;
+      border-radius: 15px;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subscribe-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255,255,255,0.03) 10px,
+        rgba(255,255,255,0.03) 20px
+      );
+      animation: subtle-move 20s linear infinite;
+    }
+
+    @keyframes subtle-move {
+      0% { transform: translate(-50%, -50%); }
+      100% { transform: translate(-45%, -45%); }
+    }
+
+    .subscribe-btn {
+      background: #ffffff;
+      color: #2c3e50;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      margin: 25px 0;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .subscribe-btn:hover {
+      background: #c0392b;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Signature Styling */
+    .signature {
+      width: 160px;
+      margin: 20px auto;
+      display: block;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
+
+    /* Footer Styling */
+    .footer-section {
+      background: #f8f9fa;
+      margin-top: 50px;
+      padding: 40px 30px;
+      border-radius: 15px;
+      border-top: 5px solid #c0392b;
+      color: #34495e;
+    }
+
+    .footer-section h3 {
+      color: #c0392b;
+      font-size: 1.3rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .footer-section p {
+      font-size: 15px;
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+
+    .footer-section a {
+      color: #c0392b;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #a93226;
+      text-decoration: underline;
+    }
+
+    .footer-section ul {
+      padding-left: 20px;
+    }
+
+    .footer-section ul li {
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li::before {
+      content: '•';
+      color: #c0392b;
+      margin-right: 5px;
+    }
+
+    /* Team Recommendations */
+    .recommend-list {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 25px;
+      border-radius: 12px;
+      margin-top: 20px;
+      border-left: 5px solid #c0392b;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .newsletter-title {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 20px;
+        margin: 25px 0;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      .subscribe-section {
+        padding: 30px 20px;
+      }
+
+      .footer-section {
+        padding: 30px 20px;
+      }
+
+      .share-buttons {
+        gap: 10px;
+      }
+
+      .share-buttons a {
+        width: 40px;
+        height: 40px;
+      }
+
+      .share-buttons a img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 5px;
+        padding: 10px;
+      }
+
+      .newsletter-title {
+        font-size: 1.6rem;
+      }
+
+      .section {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      blockquote {
+        padding: 20px 15px;
+        font-size: 1rem;
+      }
+
+      .subscribe-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+      }
+    }
+
+    /* Animation for scroll reveal */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .share-buttons,
+      .subscribe-section {
+        display: none;
+      }
+      
+      .container {
+        box-shadow: none;
+        max-width: 100%;
+      }
+      
+      .section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header-logo">
+      <img src="https://rd.local/external/assets_new/img/newsletters/newsletter_header.png" alt="The Edge Newsletter">
+    </div>
+
+    <h1 class="newsletter-title">The Edge Newsletter</h1>
+    
+    <!-- Date and Links -->
+    <div class="date-info">
+      May 1, 2025 |
+      <a href="https://ruchidoctor.com/explore/newsletters" target="_blank" rel="noopener">Issue Archive</a> |
+      <a href="https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers" target="_blank" rel="noopener">View Online</a>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="section">
+      <div class="section-title">Shareable</div>
+      <h2>Today's news update:</h2>
+      <a href="https://rd.local/external/assets_new/img/newsletters/newsletters-010.png" target="_blank" rel="noopener">
+        <img src="https://rd.local/external/assets_new/img/newsletters/newsletters-010.png" class="image-full" alt="Ruchi's Quote">
+      </a>
+      <p><em>Share this newsletter to inspire someone...</em></p>
+      <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers" target="_blank" rel="noopener" aria-label="Share on Facebook"><img src="https://rd.local/external/assets_new/img/facebook.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><img src="https://rd.local/external/assets_new/img/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://twitter.com/intent/tweet?text=https://ruchidoctor.com/newsletters/how-do-you-position-yourself-in-life-a-transformational-conversation-with-crpf-officers" target="_blank" rel="noopener" aria-label="Share on Twitter"><img src="https://rd.local/external/assets_new/img/twitter-background.png" alt="Twitter"></a>
+      </div>
+    </div>
+
+    <!-- Main Article -->
+    <div class="section main-content">
+      <div class="section-title">How Do You Position Yourself in Life?</div>
+      <h2>A Transformational Conversation with CRPF Officers</h2>
+      <p><strong>by Ruchi Doctor</strong></p>
+
+      <p><strong>Dear Reader,</strong></p>
+      <p>Some rooms carry the weight of responsibility, service, and strength.</p>
+      <p>And recently, I had the honour of stepping into such a room — inside a session with CRPF officers, men and women who carry the safety of our nation on their shoulders.</p>
+
+      <p>But instead of only speaking about systems, mindset, or tactical skills — I began with a deeper, quieter question:</p>
+      <h3>"How do you position yourself in life?"</h3>
+
+      <h4>Why This Question Matters</h4>
+      <p>In a world where titles, ranks, roles, and routines define us — we often forget: positioning isn't about the external.</p>
+      <p>It's about how you see yourself when no one is watching.</p>
+      <p>It's about:</p>
+      <ul>
+        <li>What lens you view life through</li>
+        <li>How you interpret success and setbacks</li>
+        <li>And most importantly… how you define your role in the bigger story</li>
+      </ul>
+
+      <h4>What I Shared with the Officers</h4>
+      <p>I said this with all the reverence I hold:</p>
+      <blockquote>
+        <p>"You can position yourself as a warrior of peace, not just a soldier of conflict."</p>
+      </blockquote>
+      <p>Because the strength to protect lies not only in physical force — but in mental resilience, emotional intelligence, and the capacity to inspire hope.</p>
+
+      <h4>Lessons for All of Us</h4>
+      <p>From that session, I want you to take away these transformational insights:</p>
+      <ul>
+        <li><strong>Self-awareness:</strong> Regularly ask yourself, “Who am I beyond my role?”</li>
+        <li><strong>Purpose:</strong> Define what legacy you want to leave behind.</li>
+        <li><strong>Connection:</strong> Build relationships that uplift, not just obligations that bind.</li>
+        <li><strong>Growth:</strong> Embrace challenges as invitations to evolve.</li>
+      </ul>
+
+      <h4>Visual Story</h4>
+      <p>Here is a snapshot from that memorable day:</p>
+      <img src="https://rd.local/external/assets_new/img/newsletters/CRPF-session-01.jpg" alt="CRPF Officers in a transformational conversation session with Ruchi Doctor" class="image-full" />
+
+      <p>It was more than a session — it was a moment of awakening, a conversation where each officer embraced their inner edge.</p>
+
+      <h4>Join the Conversation</h4>
+      <p>How do <em>you</em> position yourself in life? I invite you to reflect and share with us.</p>
+
+      <p>Write to me at <a href="mailto:contact@ruchidoctor.com">contact@ruchidoctor.com</a> or follow me on social media and tag your story with <strong>#PositionYourself</strong>.</p>
+
+      <h3>More Inspiration</h3>
+      <div class="recommend-list" aria-label="Recommended Resources and Newsletters">
+        <ul>
+          <li><a href="https://ruchidoctor.com/newsletters/leadership-with-compassion" target="_blank" rel="noopener">Leadership with Compassion</a></li>
+          <li><a href="https://ruchidoctor.com/newsletters/the-power-of-mindset" target="_blank" rel="noopener">The Power of Mindset</a></li>
+          <li><a href="https://ruchidoctor.com/newsletters/stories-of-resilience" target="_blank" rel="noopener">Stories of Resilience</a></li>
+          <li><a href="https://ruchidoctor.com/explore/newsletters" target="_blank" rel="noopener">Explore all Newsletters</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section" aria-label="Subscribe to The Edge Newsletter">
+      <img src="https://rd.local/external/assets_new/img/newsletters/newsletter_banner.png" alt="Subscribe to The Edge Newsletter" class="image-full" style="max-width:360px; margin:0 auto 20px;" />
+      <h2 style="margin-bottom: 12px;">Stay Inspired & Informed</h2>
+      <p style="max-width: 520px; margin: 0 auto 20px; font-style: italic;">
+        Join thousands of readers who receive exclusive insights, interviews, and transformational stories.
+      </p>
+      <a href="https://ruchidoctor.com/newsletter-signup" target="_blank" rel="noopener" class="subscribe-btn" role="button" aria-label="Subscribe to The Edge Newsletter">Subscribe Now</a>
+      <img src="https://rd.local/external/assets_new/img/signature-ruchi.png" alt="Ruchi Doctor Signature" class="signature" />
+      <p style="font-style: italic; margin-top: -10px;">With warm regards, Ruchi Doctor</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section" role="contentinfo">
+      <h3>About The Edge Newsletter</h3>
+      <p>
+        The Edge Newsletter is your weekly dose of inspiration, deep conversations, and practical insights to help you sharpen your edge in life and leadership. Curated and authored by Ruchi Doctor, a transformational coach and speaker.
+      </p>
+      <h3>Contact & Connect</h3>
+      <p>Email: <a href="mailto:contact@ruchidoctor.com">contact@ruchidoctor.com</a></p>
+      <p>Website: <a href="https://ruchidoctor.com" target="_blank" rel="noopener">ruchidoctor.com</a></p>
+      <p>Follow on 
+        <a href="https://www.facebook.com/ruchidoctor" target="_blank" rel="noopener">Facebook</a>, 
+        <a href="https://twitter.com/ruchidoctor" target="_blank" rel="noopener">Twitter</a>, and 
+        <a href="https://linkedin.com/in/ruchidoctor" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <h3>Legal</h3>
+      <p>
+        © 2025 Ruchi Doctor. All rights reserved. This newsletter is intended for personal and educational use only.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
